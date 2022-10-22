@@ -1,5 +1,6 @@
 package com.example.learnwithgarbancete
 
+import android.content.*
 import android.support.v7.app.*
 import android.os.*
 import android.widget.*
@@ -16,7 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         maths = findViewById(R.id.button)
-        text = findViewById(R.id.textView)
 
+        maths.setOnClickListener() {
+            val intent : Intent = Intent(this, MathsGame::class.java)
+            startActivity(intent)
+        }
     }
 }
