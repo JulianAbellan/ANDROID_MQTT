@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         maths = findViewById(R.id.button)
-
         maths.setOnClickListener() {
             val intent : Intent = Intent(this, MathsGame::class.java)
             startActivity(intent)

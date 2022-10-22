@@ -25,10 +25,12 @@ class MathsGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maths_game)
 
-        operacionText = findViewById(R.id.operacionText)
-        mostrarOp()
-        crearOpciones()
 
+        operacionText = findViewById(R.id.operacionText)
+        buttonOpA = findViewById(R.id.buttonOpA)
+        buttonOpB = findViewById(R.id.buttonOpB)
+        buttonOpC = findViewById(R.id.buttonOpC)
+        buttonOpD = findViewById(R.id.buttonOpD)
         atrasMaths = findViewById(R.id.atrasMaths)
 
         atrasMaths.setOnClickListener() {
@@ -36,6 +38,9 @@ class MathsGame : AppCompatActivity() {
             startActivity(intent)
         }
 
+        mostrarOp()
+        crearOpciones()
+        setOperaciones()
     }
 
     fun mostrarOp() {
@@ -43,10 +48,10 @@ class MathsGame : AppCompatActivity() {
     }
 
     fun setOperaciones(){
-        buttonOpA.setText(lista[0])
-        buttonOpB.setText(lista[1])
-        buttonOpC.setText(lista[2])
-        buttonOpD.setText(lista[3])
+        buttonOpA.setText("" + lista[0])
+        buttonOpB.setText("" + lista[1])
+        buttonOpC.setText("" + lista[2])
+        buttonOpD.setText("" + lista[3])
     }
 
     fun crearOpciones() {
@@ -62,7 +67,6 @@ class MathsGame : AppCompatActivity() {
 
         lista = listOf(resultado, num1, num2, num3).shuffled()
 
-        setOperaciones()
     }
 
     fun distintos(num1 : Int, num2 : Int, num3 : Int) : Boolean{
