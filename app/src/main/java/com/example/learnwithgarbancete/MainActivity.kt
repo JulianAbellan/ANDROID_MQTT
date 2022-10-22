@@ -19,12 +19,4 @@ class MainActivity : AppCompatActivity() {
         text = findViewById(R.id.textView)
 
     }
-
-    fun pelao(view : View){
-        text.setText("Pelao deja de ligar cabron")
-    }
-
-    fun estudiar(view: View){
-        text.setText("Y vamos a hacer ipo ajajjaja")
-    }
 }
