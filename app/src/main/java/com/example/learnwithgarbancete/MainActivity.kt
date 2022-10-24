@@ -9,6 +9,7 @@ import android.view.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var maths: Button;
+    lateinit var language: Button;
     lateinit var text: TextView;
 
 
@@ -16,7 +17,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        maths = findViewById(R.id.button)
+        maths = findViewById(R.id.mathsButton)
+        language = findViewById(R.id.languageButton)
+
+        language.setOnClickListener(){
+            val intent : Intent = Intent(this, LanguageGame::class.java)
+            startActivity(intent)
+        }
+
         maths.setOnClickListener() {
             val intent : Intent = Intent(this, MathsGame::class.java)
             startActivity(intent)
