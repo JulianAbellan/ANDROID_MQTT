@@ -1,6 +1,5 @@
 package com.example.learnwithgarbancete
 
-import android.content.*
 import android.support.v7.app.*
 import android.os.*
 import android.widget.*
@@ -9,7 +8,6 @@ import android.view.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var maths: Button;
-    lateinit var language: Button;
     lateinit var text: TextView;
 
 
