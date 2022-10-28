@@ -1,5 +1,6 @@
 package com.example.learnwithgarbancete
 
+import android.content.Intent
 import android.support.v7.app.*
 import android.os.*
 import android.widget.*
@@ -9,6 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var maths: Button;
     lateinit var text: TextView;
+    lateinit var language : Button;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

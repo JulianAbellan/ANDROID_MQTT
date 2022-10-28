@@ -16,7 +16,7 @@ class LanguageGame : AppCompatActivity() {
     lateinit var grabarText: TextView
     lateinit var nivelTextLengua : TextView
     lateinit var dataLanguage : TextView
-    var frases : List<String>? = null
+    lateinit var frases : List<String>
     var inputText : String? = null
     val RECOGNISE_SPEECH_ACTIVITY = 102
     var i : Int = 0
@@ -55,7 +55,7 @@ class LanguageGame : AppCompatActivity() {
     }
 
     fun validar(){
-        if (inputText != frases?.get(i)) {
+        if (!inputText.equals(frases?.get(i), ignoreCase = true)) {
             grabarText.setText("Try again!")
         } else {
             grabarText.setText("CORRECT!")
@@ -66,10 +66,16 @@ class LanguageGame : AppCompatActivity() {
         setNivel()
         generarFrases()
         ponerFrase()
+        validar()
     }
 
     fun ponerFrase(){
         dataLanguage.setText("SAY: ${frases?.get(i)}")
+
+        if (frases.get(i).get(0) == '¿' || frases.get(i).get(0) == '!'){
+             = (frases.get(i).substring(1, frases.get(i).length-2))
+        }
+
     }
 
     fun setNivel(){
