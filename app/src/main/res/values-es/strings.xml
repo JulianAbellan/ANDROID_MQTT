@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">APRENDE CON GARBANCETE</string>
+    <string name="maths_name">MATES</string>
+    <string name="health_name">SALUD</string>
+    <string name="geometry_name">GEOMETRÍA</string>
+    <string name="language_name">INGLÉS</string>
+    <string name="science_name">CIENCIA</string>
+    <string name="playwithme">¡JUEGA CONMIGO!</string>
+    <string name="score_name">Puntos</string>
+    <string name="level_name">Nivel</string>
+    <string name="points">PUNTOS!</string>
+    <string name="puntuaje_bajo">VAYA... ¡HAS CONSEGUIDO</string>
+    <string name="puntuaje_alto">¡HALA!¡FELICIDADES!¡ERES TODO UN MATEMÁTICO!¡HAS CONSEGUIDO</string>
+    <string name="puntuaje_medio">¡CASI LO TIENES!¡HAS CONSEGUIDO</string>
+</resources>

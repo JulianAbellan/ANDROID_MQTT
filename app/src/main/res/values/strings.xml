@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">LEARN WITH GARBANCETE</string>
+    <string name="maths_name">MATHS</string>
+    <string name="health_name">HEALTH</string>
+    <string name="geometry_name">GEOMETRY</string>
+    <string name="language_name">SPANISH</string>
+    <string name="science_name">SCIENCE</string>
+    <string name="playwithme">PLAY WITH ME!</string>
+    <string name="score_name">Score</string>
+    <string name="level_name">Level</string>
+    <string name="puntuaje_bajo">OOPS... YOU GOT</string>
+    <string name="points">POINTS!</string>
+    <string name="puntuaje_medio">YOU ALMOST GOT IT! YOU ACHIEVED</string>
+    <string name="puntuaje_alto">WOW! CONGRATULATIONS! YOU ARE A REAL MATHEMATICIAN! YOU GOT</string>
+
+
 </resources>

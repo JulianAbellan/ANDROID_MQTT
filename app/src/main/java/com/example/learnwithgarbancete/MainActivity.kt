@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var maths: Button;
     lateinit var text: TextView;
     lateinit var language : Button;
+    lateinit var options : Button;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +20,15 @@ class MainActivity : AppCompatActivity() {
 
         maths = findViewById(R.id.mathsButton)
         language = findViewById(R.id.languageButton)
+        options = findViewById(R.id.configuration)
 
         language.setOnClickListener(){
             val intent : Intent = Intent(this, LanguageGame::class.java)
+            startActivity(intent)
+        }
+
+        options.setOnClickListener() {
+            val intent : Intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
         }
 

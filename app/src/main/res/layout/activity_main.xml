@@ -27,7 +27,7 @@
         android:layout_height="117dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls"
-        android:text="MATHS"
+        android:text="@string/maths_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -44,7 +44,7 @@
         android:layout_height="113dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
-        android:text="SCIENCE"
+        android:text="@string/science_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -61,7 +61,7 @@
         android:layout_height="113dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
-        android:text="SPANISH"
+        android:text="@string/language_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -78,7 +78,7 @@
         android:layout_height="113dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
-        android:text="GEOMETRY"
+        android:text="@string/geometry_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -95,7 +95,7 @@
         android:layout_height="113dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
-        android:text="HEALTH"
+        android:text="@string/health_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -147,18 +147,29 @@
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
 
-
     <ImageView
         android:id="@+id/bubble"
-        android:layout_width="122dp"
-        android:layout_height="119dp"
+        android:layout_width="165dp"
+        android:layout_height="115dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823"
-        app:srcCompat="@drawable/bubbleplay" />
+        app:layout_constraintVertical_bias="0.833"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <TextView
+        android:id="@+id/playwithme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playwithme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
 
 
 </android.support.constraint.ConstraintLayout>

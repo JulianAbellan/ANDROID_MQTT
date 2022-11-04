@@ -105,11 +105,11 @@ class MathsGame : AppCompatActivity() {
     }
 
     fun setScore(){
-        score?.setText("SCORE: ${scorePuntos}")
+        score?.setText("${getString(R.string.score_name)}: ${scorePuntos}")
     }
 
     fun ponerNivel(){
-        nivelText?.setText("LEVEL: ${i}/5")
+        nivelText?.setText("${getString(R.string.level_name)}: ${i}/5")
 
         if(i == 5){
             resumen()
@@ -123,11 +123,11 @@ class MathsGame : AppCompatActivity() {
         buttonOpD.setEnabled(false)
 
         if (scorePuntos < 2)
-            resumenText?.setText("YOU GOT ${scorePuntos} POINTS...")
+            resumenText?.setText("${getString(R.string.puntuaje_bajo)} ${scorePuntos} ${getString(R.string.points)}")
         else if (scorePuntos < 5)
-            resumenText?.setText("WOW! YOU GOT ${scorePuntos} POINTS! YOU ALMOST GOT IT!")
+            resumenText?.setText("${getString(R.string.puntuaje_medio)} ${scorePuntos} ${getString(R.string.points)}")
         else
-            resumenText?.setText("CONGRATS! YOU GOT ${scorePuntos} POINTS! YOU ARE A REAL MATHEMATICIAN")
+            resumenText?.setText("${getString(R.string.puntuaje_alto)} ${scorePuntos} ${getString(R.string.points)}")
     }
 
     fun mostrarOp() {
