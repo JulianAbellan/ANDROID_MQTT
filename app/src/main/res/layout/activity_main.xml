@@ -8,6 +8,23 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/health"
+        android:layout_width="156dp"
+        android:layout_height="113dp"
+        android:background="@drawable/nubessinfondo"
+        android:fontFamily="@font/crafty_girls2"
+        android:text="@string/health_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="524dp"
@@ -15,10 +32,10 @@
         android:layout_marginBottom="468dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.994"
         app:srcCompat="@drawable/carteltextotitulo" />
 
     <Button
@@ -33,7 +50,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.302" />
@@ -69,8 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/geometry"
@@ -90,36 +106,6 @@
         app:layout_constraintVertical_bias="0.627" />
 
     <Button
-        android:id="@+id/health"
-        android:layout_width="156dp"
-        android:layout_height="113dp"
-        android:background="@drawable/nubessinfondo"
-        android:fontFamily="@font/crafty_girls2"
-        android:text="@string/health_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <Button
-        android:id="@+id/configuration"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
-        android:background="@drawable/config"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-    <Button
         android:id="@+id/info"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -131,7 +117,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
 
     <Button
         android:id="@+id/garbancete"
@@ -146,18 +131,17 @@
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
-
     <ImageView
         android:id="@+id/bubble"
         android:layout_width="165dp"
         android:layout_height="115dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833"
-        app:srcCompat="@drawable/bocadillo" />
+        app:layout_constraintVertical_bias="0.834"
+        app:srcCompat="@drawable/bubbleplay" />
 
     <TextView
         android:id="@+id/playwithme"
@@ -166,10 +150,23 @@
         android:text="@string/playwithme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintVertical_bias="0.782" />
+
+    <Button
+        android:id="@+id/configuration"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@drawable/config"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
 
 </android.support.constraint.ConstraintLayout>
