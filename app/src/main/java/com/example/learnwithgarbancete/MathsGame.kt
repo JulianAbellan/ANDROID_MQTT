@@ -48,39 +48,35 @@ class MathsGame : AppCompatActivity() {
         }
 
         buttonOpA.setOnClickListener() {
-            if (resultado == lista[0]) {
-                operacionText?.setText("CORRECT")
+            if(Integer.parseInt(buttonOpA.getText() as String) == resultado){
+                checkResults(true)
             } else {
-                operacionText?.setText("INCORRECT")
+                checkResults(false)
             }
-            checkResults()
         }
 
         buttonOpB.setOnClickListener() {
-            if (resultado == lista[1]) {
-                operacionText?.setText("CORRECT")
+            if(Integer.parseInt(buttonOpB.getText() as String) == resultado){
+                checkResults(true)
             } else {
-                operacionText?.setText("INCORRECT")
+                checkResults(false)
             }
-            checkResults()
         }
 
         buttonOpC.setOnClickListener() {
-            if (resultado == lista[2]) {
-                operacionText?.setText("CORRECT")
+            if(Integer.parseInt(buttonOpC.getText() as String) == resultado){
+                checkResults(true)
             } else {
-                operacionText?.setText("INCORRECT")
+                checkResults(false)
             }
-            checkResults()
         }
 
         buttonOpD.setOnClickListener() {
-            if (resultado == lista[3]) {
-                operacionText?.setText("CORRECT")
+            if(Integer.parseInt(buttonOpD.getText() as String) == resultado){
+                checkResults(true)
             } else {
-                operacionText?.setText("INCORRECT")
+                checkResults(false)
             }
-            checkResults()
         }
 
         rutina()
@@ -96,10 +92,14 @@ class MathsGame : AppCompatActivity() {
         setOperaciones()
     }
 
-    fun checkResults(){
-        if(operacionText?.getText()?.equals("CORRECT") == true) {
-            scorePuntos +=1
+    fun checkResults(correct: Boolean){
+        if(correct) {
+            resumenText?.setText("CORRECT!")
+            scorePuntos += 1
+        } else {
+            resumenText?.setText("INCORRECT!")
         }
+
 
         rutina()
     }

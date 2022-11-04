@@ -10,7 +10,7 @@ import java.util.*
 
 class LanguageGame : AppCompatActivity() {
 
-    lateinit var sendMsg: Button
+    lateinit var fraseActual: String
     lateinit var backButton: Button
     lateinit var grabar: ImageButton
     lateinit var grabarText: TextView
@@ -30,13 +30,6 @@ class LanguageGame : AppCompatActivity() {
         nivelTextLengua = findViewById(R.id.nivelTextLengua)
         dataLanguage = findViewById(R.id.dataLanguage)
         grabar = findViewById(R.id.grabarButton)
-        sendMsg = findViewById(R.id.sendMsg)
-
-        sendMsg.setEnabled(false)
-
-        sendMsg.setOnClickListener(){
-            validar()
-        }
 
         grabar.setOnClickListener(){
            askSpeechInput()
@@ -47,33 +40,44 @@ class LanguageGame : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        generarFrases()
         rutina()
-
-
 
     }
 
     fun validar(){
-        if (!inputText.equals(frases?.get(i), ignoreCase = true)) {
+
+        if (!inputText.equals(fraseActual, ignoreCase = true)){
             grabarText.setText("Try again!")
         } else {
             grabarText.setText("CORRECT!")
+            i+=1
+
+            if (i >= 5) {
+                finalizar()
+            } else {
+                rutina()
+            }
         }
+
+    }
+
+    fun finalizar(){
+        grabar.setEnabled(false)
+        dataLanguage.setText("WELL DONE! YOU PASSED YOUR SPANISH CLASS")
     }
 
     fun rutina(){
         setNivel()
-        generarFrases()
         ponerFrase()
-        validar()
     }
 
     fun ponerFrase(){
         dataLanguage.setText("SAY: ${frases?.get(i)}")
 
-        if (frases.get(i).get(0) == '¿' || frases.get(i).get(0) == '!'){
-             = (frases.get(i).substring(1, frases.get(i).length-2))
+        fraseActual = frases.get(i)
+        if (fraseActual.get(0) == '¿' || fraseActual.get(0) == '¡'){
+            fraseActual = (fraseActual.substring(1, fraseActual.length-1))
         }
 
     }
@@ -83,18 +87,16 @@ class LanguageGame : AppCompatActivity() {
     }
 
     fun generarFrases(){
-        var lista = listOf("¡Hola!", "¿Cómo te llamas?", "Mi nombre es Garbancete", "Me gusta jugar al fútbol", "Estoy muy feliz", "Soy un conejo")
-        frases = lista.shuffled().subList(0, 4)
+        frases = listOf("¡Hola!", "¿Cómo te llamas?", "Mi nombre es Garbancete", "Me gusta jugar al fútbol", "Estoy muy feliz", "Soy un conejo", "Espera un momento", "Me encanta aprender español", "Mi color favorito es el naranja", "¡Adiós!").shuffled()
     }
-
-
+    
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == RECOGNISE_SPEECH_ACTIVITY && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             inputText = result?.get(0).toString()
-            sendMsg.setEnabled(true)
+            validar()
         }
     }
 
