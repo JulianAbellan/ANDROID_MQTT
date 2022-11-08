@@ -94,10 +94,10 @@ class MathsGame : AppCompatActivity() {
 
     fun checkResults(correct: Boolean){
         if(correct) {
-            resumenText?.setText("CORRECT!")
+            resumenText?.setText("${getString(R.string.correct)}")
             scorePuntos += 1
         } else {
-            resumenText?.setText("INCORRECT!")
+            resumenText?.setText("${getString(R.string.incorrect)}")
         }
 
 

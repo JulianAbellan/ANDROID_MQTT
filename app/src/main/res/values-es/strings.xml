@@ -13,4 +13,6 @@
     <string name="puntuaje_bajo">VAYA... ¡HAS CONSEGUIDO</string>
     <string name="puntuaje_alto">¡HALA!¡FELICIDADES!¡ERES TODO UN MATEMÁTICO!¡HAS CONSEGUIDO</string>
     <string name="puntuaje_medio">¡CASI LO TIENES!¡HAS CONSEGUIDO</string>
+    <string name="correct">¡CORRECTO!</string>
+    <string name="incorrect">¡INCORRECTO!</string>
 </resources>

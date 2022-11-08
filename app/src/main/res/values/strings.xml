@@ -12,6 +12,8 @@
     <string name="points">POINTS!</string>
     <string name="puntuaje_medio">YOU ALMOST GOT IT! YOU ACHIEVED</string>
     <string name="puntuaje_alto">WOW! CONGRATULATIONS! YOU ARE A REAL MATHEMATICIAN! YOU GOT</string>
+    <string name="correct">CORRECT!</string>
+    <string name="incorrect">INCORRECT!</string>
 
 
 </resources>
