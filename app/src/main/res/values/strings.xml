@@ -14,6 +14,21 @@
     <string name="puntuaje_alto">WOW! CONGRATULATIONS! YOU ARE A REAL MATHEMATICIAN! YOU GOT</string>
     <string name="correct">CORRECT!</string>
     <string name="incorrect">INCORRECT!</string>
-
+    <string name="tryagain">Try again!</string>
+    <string name="successLanguage">WELL DONE! YOU PASSED YOUR SPANISH CLASS</string>
+    <string name="say">SAY</string>
+    <string name="saysmth">Say something!</string>
+    <string name="idioma"> es-ES </string>
+    <string name="frase1">¡Hola!</string>
+    <string name="frase2">¿Cómo te llamas?</string>
+    <string name="frase3">Mi nombre es Garbancete</string>
+    <string name="frase4">Me gusta jugar al fútbol</string>
+    <string name="frase5">Estoy muy feliz</string>
+    <string name="frase6">Soy un conejo</string>
+    <string name="frase7">Espera un momento</string>
+    <string name="frase8">Me encanta aprender español</string>
+    <string name="frase9">Mi color favorito es el naranja</string>
+    <string name="frase10">¡Adiós!</string>
+    <string name="back">BACK</string>
 
 </resources>

@@ -15,4 +15,20 @@
     <string name="puntuaje_medio">¡CASI LO TIENES!¡HAS CONSEGUIDO</string>
     <string name="correct">¡CORRECTO!</string>
     <string name="incorrect">¡INCORRECTO!</string>
+    <string name="tryagain">¡Inténtalo de nuevo!</string>
+    <string name="successLanguage">¡BIEN HECHO!¡HAS SUPERADO TUS CLASES DE INGLÉS!</string>
+    <string name="say">DI</string>
+    <string name="saysmth">¡Di algo!</string>
+    <string name="idioma">en-EN</string>
+    <string name="frase1">Hello!</string>
+    <string name="frase2">What is your name?</string>
+    <string name="frase3">My name is Garbancete</string>
+    <string name="frase4">I like playing football</string>
+    <string name="frase5">I am very happy</string>
+    <string name="frase6">I am a rabbit</string>
+    <string name="frase7">Wait a second</string>
+    <string name="frase8">I love learning English</string>
+    <string name="frase9">My favourite colour is orange</string>
+    <string name="frase10">Goodbye!</string>
+    <string name="back">ATRÁS</string>
 </resources>

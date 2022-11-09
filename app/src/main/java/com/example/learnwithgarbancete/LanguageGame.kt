@@ -48,9 +48,9 @@ class LanguageGame : AppCompatActivity() {
     fun validar(){
 
         if (!inputText.equals(fraseActual, ignoreCase = true)){
-            grabarText.setText("Try again!")
+            grabarText.setText("${getString(R.string.tryagain)}")
         } else {
-            grabarText.setText("CORRECT!")
+            grabarText.setText("${getString(R.string.correct)}")
             i+=1
 
             if (i >= 5) {
@@ -64,7 +64,7 @@ class LanguageGame : AppCompatActivity() {
 
     fun finalizar(){
         grabar.setEnabled(false)
-        dataLanguage.setText("WELL DONE! YOU PASSED YOUR SPANISH CLASS")
+        dataLanguage.setText("${getString(R.string.successLanguage)}")
     }
 
     fun rutina(){
@@ -73,7 +73,7 @@ class LanguageGame : AppCompatActivity() {
     }
 
     fun ponerFrase(){
-        dataLanguage.setText("SAY: ${frases?.get(i)}")
+        dataLanguage.setText("${getString(R.string.say)}: ${frases?.get(i)}")
 
         fraseActual = frases.get(i)
         if (fraseActual.get(0) == '¿' || fraseActual.get(0) == '¡'){
@@ -83,11 +83,11 @@ class LanguageGame : AppCompatActivity() {
     }
 
     fun setNivel(){
-        nivelTextLengua.setText("LEVEL: ${i+1}/5")
+        nivelTextLengua.setText("${getString(R.string.level_name)}: ${i+1}/5")
     }
 
     fun generarFrases(){
-        frases = listOf("¡Hola!", "¿Cómo te llamas?", "Mi nombre es Garbancete", "Me gusta jugar al fútbol", "Estoy muy feliz", "Soy un conejo", "Espera un momento", "Me encanta aprender español", "Mi color favorito es el naranja", "¡Adiós!").shuffled()
+        frases = listOf(getString(R.string.frase1), getString(R.string.frase2), getString(R.string.frase3), getString(R.string.frase4), getString(R.string.frase5), getString(R.string.frase6), getString(R.string.frase7), getString(R.string.frase8), getString(R.string.frase9), getString(R.string.frase10)).shuffled()
     }
     
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -107,9 +107,9 @@ class LanguageGame : AppCompatActivity() {
             Toast.makeText(this, "Your device does not support voice recognision", Toast.LENGTH_SHORT).show()
         } else {
             val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-ES")
+            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "${getString(R.string.idioma)}")
             i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, Locale.getDefault())
-            i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Say something!")
+            i.putExtra(RecognizerIntent.EXTRA_PROMPT, "${getString(R.string.saysmth)}")
             startActivityForResult(i, RECOGNISE_SPEECH_ACTIVITY)
         }
     }

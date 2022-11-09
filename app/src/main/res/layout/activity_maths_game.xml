@@ -71,7 +71,7 @@
         android:id="@+id/atrasMaths"
         android:layout_width="78dp"
         android:layout_height="52dp"
-        android:text="BACK"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
