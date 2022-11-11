@@ -18,7 +18,7 @@ class ConfigurationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuration2)
 
-        switchlanguage = findViewById(R.id.switchlanguage)
+        //switchlanguage = findViewById(R.id.switchlanguage)
         button = findViewById(R.id.buttonBack)
 
         button.setOnClickListener(){

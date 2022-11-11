@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         maths = findViewById(R.id.mathsButton)
         language = findViewById(R.id.languageButton)
