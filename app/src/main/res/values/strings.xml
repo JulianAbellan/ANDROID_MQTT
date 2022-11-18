@@ -30,5 +30,19 @@
     <string name="frase9">Mi color favorito es el naranja</string>
     <string name="frase10">¡Adiós!</string>
     <string name="back">BACK</string>
+    <string name="blindassitantmode">VISUAL ASSISTANT</string>
+    <string name="changelanguage">CHANGE LANGUAGE</string>
+    <string name="colourblindmode">COLOUR BLIND MODE</string>
+    <string name="defaultvalues">RESTORE DEFAULT VALUES</string>
+    <string name="skipt">SKIP</string>
+    <string name="saludo">Hi, friend! It\'s Garbancete!</string>
+    <string name="dialogo1">I think an explanation of the settings will help you, won\'t it?</string>
+    <string name="dialogo2">First, switch this option on in case you need visual assistance</string>
+    <string name="dialogo3">Then, if you want to change the language, click here!</string>
+    <string name="dialogo4">Next, click here if you suffer color blindness</string>
+    <string name="dialogo5">Finally, click here to reset your settings</string>
+    <string name="despedida">That\'s all! Let me know if you need me to repeat everything!</string>
+    <string name="siguiente">NEXT</string>
+    <string name="ayuda">If you want to rewatch the tutorial, click on me!</string>
 
 </resources>

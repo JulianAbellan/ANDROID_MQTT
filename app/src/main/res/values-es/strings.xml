@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">APRENDE CON GARBANCETE</string>
+    <string name="app_name">LEARN WITH GARBANCETE</string>
     <string name="maths_name">MATES</string>
     <string name="health_name">SALUD</string>
     <string name="geometry_name">GEOMETRÍA</string>
@@ -31,4 +31,19 @@
     <string name="frase9">My favourite colour is orange</string>
     <string name="frase10">Goodbye!</string>
     <string name="back">ATRÁS</string>
+    <string name="blindassitantmode">ASISTENTE VISUAL</string>
+    <string name="changelanguage">CAMBIAR IDIOMA</string>
+    <string name="colourblindmode">MODO DALTÓNICO</string>
+    <string name="defaultvalues">RESTAURAR VALORES POR DEFECTO</string>
+    <string name="skipt">SALTAR</string>
+    <string name="saludo">¡Hola, colega!¡Soy Garbancete!</string>
+    <string name="dialogo1">Creo que te vendrá bien una explicación de los Ajustes, ¿no?</string>
+    <string name="dialogo2">Primero, activa esta opción si necesitas asistencia visual</string>
+    <string name="dialogo3">Luego, si necesitas cambiar el idioma, clicka aquí</string>
+    <string name="dialogo4">Puedes clickar aquí si sufres de daltonismo</string>
+    <string name="dialogo5">Por último, clicka aquí para reiniciar los ajustes</string>
+    <string name="despedida">¡Eso es todo!¡Avísame si necesitas que te lo repita!</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="ayuda">Si quieres volver a ver el tutorial, ¡clicka en mí!</string>
+
 </resources>
