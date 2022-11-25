@@ -1,14 +1,19 @@
 package com.example.learnwithgarbancete
 
-import android.annotation.SuppressLint
-
+import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.*
+import android.content.pm.*
 import android.content.res.Configuration
 import android.os.Bundle
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import android.view.accessibility.AccessibilityManager
 import android.widget.*
 import java.io.*
+import java.security.cert.Extension
 import java.util.*
+
 
 class ConfigurationActivity : AppCompatActivity() {
 
@@ -25,6 +30,7 @@ class ConfigurationActivity : AppCompatActivity() {
     lateinit var vpd: Button
     lateinit var edit: SharedPreferences.Editor
     lateinit var garbancete: ImageView
+    lateinit var switchVisual: Switch
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +46,7 @@ class ConfigurationActivity : AppCompatActivity() {
         language = findViewById(R.id.languageSelect)
         colorblind = findViewById(R.id.colorBlindnessMode)
         garbancete = findViewById(R.id.garbanConf)
+        switchVisual = findViewById(R.id.switchVisual)
 
         cargarpreferencias()
         edit = settings.edit()
@@ -70,23 +77,79 @@ class ConfigurationActivity : AppCompatActivity() {
             establecerValoresPorDefecto()
         }
 
-        garbancete.setOnClickListener(){
+        garbancete.setOnClickListener() {
             activarTutorial()
+        }
+
+        switchVisual.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                println("modo locura")
+                enableTalkBack()
+            } else {
+
+            }
         }
 
         checkTutorial()
     }
 
-    fun checkTutorial(){
+    fun enableTalkBack() {
+        try {
+            val am =
+                applicationContext.getSystemService(ACCESSIBILITY_SERVICE) as AccessibilityManager
+            val services = am.installedAccessibilityServiceList
+            if (services.isEmpty()) {
+                return
+            }
+            var service = services[0]
+            var enableTouchExploration = (service.flags
+                    and AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE) != 0
+            // Try to find a service supporting explore by touch.
+            if (!enableTouchExploration) {
+                val serviceCount = services.size
+                for (i in 1 until serviceCount) {
+                    val candidate = services[i]
+                    if (candidate.flags and AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE != 0) {
+                        enableTouchExploration = true
+                        service = candidate
+                        break
+                    }
+                }
+            }
+            val serviceInfo: ServiceInfo = service.resolveInfo.serviceInfo
+            val componentName = ComponentName(serviceInfo.packageName, serviceInfo.name)
+            val enabledServiceString: String = componentName.flattenToString()
+            val resolver: ContentResolver = applicationContext.getContentResolver()
+            Settings.Secure.putString(
+                resolver,
+                "enabled_accessibility_services",
+                enabledServiceString
+            )
+            Settings.Secure.putString(
+                resolver,
+                "touch_exploration_granted_accessibility_services",
+                enabledServiceString
+            )
+            if (enableTouchExploration) {
+                Settings.Secure.putInt(resolver, "touch_exploration_enabled", 1)
+            }
+            Settings.Secure.putInt(resolver, "accessibility_script_injection", 1)
+            Settings.Secure.putInt(resolver, "accessibility_enabled", 1)
+        } catch (e: Exception) {
+            Log.e("Device", "Failed to enable accessibility: $e")
+        }
+    }
+
+    fun checkTutorial() {
         var tuto = settings.getString("tutorial", "si").toString()
         println(tuto)
-        if (tuto.equals("si")){
+        if (tuto.equals("si")) {
             activarTutorial()
         }
     }
 
-    fun activarTutorial(){
-        edit.putString("tutorial","no")
+    fun activarTutorial() {
+        edit.putString("tutorial", "no")
         edit.commit()
 
         val intent: Intent = Intent(this, Tutorial::class.java)
@@ -160,7 +223,7 @@ class ConfigurationActivity : AppCompatActivity() {
             cargarpreferencias()
         }
 
-        val intent : Intent = Intent(this, Auxiliar::class.java)
+        val intent: Intent = Intent(this, Auxiliar::class.java)
         startActivity(intent)
     }
 

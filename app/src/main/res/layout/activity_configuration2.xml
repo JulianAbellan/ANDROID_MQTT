@@ -96,7 +96,7 @@
         app:layout_constraintVertical_bias="0.269" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchVisual"
         android:layout_width="61dp"
         android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
