@@ -38,12 +38,9 @@ public class acelerometro extends AppCompatActivity {
                     whip = 0;
                 }
             }
-
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
-
             }
         };
     }
-
 }

@@ -1,11 +1,17 @@
 package com.example.learnwithgarbancete
 
-import android.annotation.SuppressLint
+import android.accessibilityservice.AccessibilityServiceInfo
+import android.content.ComponentName
+import android.content.ContentResolver
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.*
+import java.security.cert.Extension
 import java.util.*
 
 class ConfigurationActivity : AppCompatActivity() {
@@ -24,6 +30,7 @@ class ConfigurationActivity : AppCompatActivity() {
         button.setOnClickListener(){
             val intent : Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+
         }
 
 
