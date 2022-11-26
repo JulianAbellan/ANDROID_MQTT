@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/health"
-        android:layout_width="156dp"
-        android:layout_height="113dp"
+        android:layout_width="155dp"
+        android:layout_height="119dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/health_name"
@@ -131,7 +131,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
+    <!--
     <ImageView
         android:id="@+id/bubble"
         android:layout_width="165dp"
@@ -142,7 +142,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.834"
-        app:srcCompat="@drawable/bocadillo" />
+        app:srcCompat="@drawable/bocadillo" />-->
 
     <TextView
         android:id="@+id/playwithme"

@@ -25,7 +25,7 @@ class LanguageGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_language_game)
 
-        backButton = findViewById(R.id.backButton)
+        backButton = findViewById(R.id.backButton3)
         grabarText = findViewById(R.id.grabarTexto)
         nivelTextLengua = findViewById(R.id.nivelTextLengua)
         dataLanguage = findViewById(R.id.dataLanguage)

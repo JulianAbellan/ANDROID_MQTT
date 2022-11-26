@@ -45,5 +45,15 @@
     <string name="despedida">¡Eso es todo!¡Avísame si necesitas que te lo repita!</string>
     <string name="siguiente">SIGUIENTE</string>
     <string name="ayuda">Si quieres volver a ver el tutorial, ¡clicka en mí!</string>
+    <string name="info">Información</string>
+    <string name="options">Opciones</string>
+    <string name="activaAsist">Has activado el asistente visual!</string>
+    <string name="desactivaAsist">Has desactivado el asistente visual!</string>
+    <string name="ChangeEnglish">Has cambiado el idioma al inglés</string>
+    <string name="ChangeSpanish">Has cambiado el idioma al español</string>
+    <string name="activaColor">Has activado el modo daltónico</string>
+    <string name="desactivaColor">Has desactivado el modo daltónico</string>
+    <string name="restoreValues">Has restaurado los valores por defecto</string>
+
 
 </resources>

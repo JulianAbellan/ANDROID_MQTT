@@ -6,12 +6,12 @@ import android.content.pm.*
 import android.content.res.Configuration
 import android.os.Bundle
 import android.provider.Settings
+import android.speech.tts.TextToSpeech
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.accessibility.AccessibilityManager
 import android.widget.*
 import java.io.*
-import java.security.cert.Extension
 import java.util.*
 
 
@@ -31,11 +31,31 @@ class ConfigurationActivity : AppCompatActivity() {
     lateinit var edit: SharedPreferences.Editor
     lateinit var garbancete: ImageView
     lateinit var switchVisual: Switch
+    lateinit var textGarbancete: TextView
+    lateinit var texttospeech: TextToSpeech
+    lateinit var auxText: String
+    lateinit var RestoreDefaultSettingsBtn: Button
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuration2)
+
+        texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
+
+            idioma = settings.getString("idioma", "").toString()
+
+            if(idioma.equals("ENGLISH")){
+                texttospeech.setLanguage(Locale.ENGLISH)
+            }
+            if(idioma.equals("ESPAÑOL")){
+                val locSpanish = Locale("spa", "ES")
+                texttospeech.setLanguage(locSpanish)
+            }
+
+        })
 
         button = findViewById(R.id.buttonBack)
         vpd = findViewById(R.id.RestoreDefaultSettingsBtn)
@@ -47,6 +67,9 @@ class ConfigurationActivity : AppCompatActivity() {
         colorblind = findViewById(R.id.colorBlindnessMode)
         garbancete = findViewById(R.id.garbanConf)
         switchVisual = findViewById(R.id.switchVisual)
+        textGarbancete =  findViewById(R.id.textView)
+        RestoreDefaultSettingsBtn =  findViewById(R.id.RestoreDefaultSettingsBtn)
+
 
         cargarpreferencias()
         edit = settings.edit()
@@ -56,6 +79,11 @@ class ConfigurationActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        RestoreDefaultSettingsBtn.setOnClickListener() {
+            textGarbancete.setText(getText(R.string.restoreValues))
+            texttospeech.speak(getText(R.string.restoreValues).toString(), TextToSpeech.QUEUE_ADD, null);
+
+        }
 
         leftLanguage.setOnClickListener() {
             setLanguage()
@@ -81,12 +109,15 @@ class ConfigurationActivity : AppCompatActivity() {
             activarTutorial()
         }
 
-        switchVisual.setOnCheckedChangeListener { _, isChecked ->
-            if(isChecked){
-                println("modo locura")
-                enableTalkBack()
-            } else {
-
+        switchVisual.setOnCheckedChangeListener(){_, isCheked ->
+            if(isCheked){
+                textGarbancete.setText(getText(R.string.activaAsist))
+                auxText = textGarbancete.text.toString()
+                texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            }else{
+                textGarbancete.setText(getText(R.string.desactivaAsist))
+                auxText = textGarbancete.text.toString()
+                texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
             }
         }
 
@@ -179,8 +210,12 @@ class ConfigurationActivity : AppCompatActivity() {
     fun cargarDaltonico(daltonico: String) {
         if (daltonico.equals("ON")) {
             colorblind.setText("ON")
+            textGarbancete.setText(getText(R.string.activaColor).toString())
+            texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         } else {
             colorblind.setText("OFF")
+            textGarbancete.setText(getText(R.string.desactivaColor).toString())
+            texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         }
     }
 
@@ -216,8 +251,18 @@ class ConfigurationActivity : AppCompatActivity() {
 
         if (l.equals("ESPAÑOL")) {
             chooseLanguage("ENGLISH")
+            texttospeech.setLanguage(Locale.ENGLISH)
+            textGarbancete.setText(getText(R.string.ChangeEnglish).toString())
+            texttospeech.speak(getText(R.string.ChangeEnglish).toString(), TextToSpeech.QUEUE_ADD, null);
+
         } else if (l.equals("ENGLISH")) {
             chooseLanguage("ESPAÑOL")
+            val locSpanish = Locale("spa", "ES")
+
+            texttospeech.setLanguage(locSpanish)
+            textGarbancete.setText(getText(R.string.ChangeSpanish).toString())
+            texttospeech.speak(getText(R.string.ChangeSpanish).toString(), TextToSpeech.QUEUE_ADD, null);
+
         } else {
             language.setText(cargarpreferencias2())
             cargarpreferencias()
@@ -234,6 +279,7 @@ class ConfigurationActivity : AppCompatActivity() {
         if (l.equals("ESPAÑOL")) {
             lang = "es"
             country = "ES"
+
 
         } else if (l.equals("ENGLISH")) {
             lang = "en"
@@ -255,5 +301,6 @@ class ConfigurationActivity : AppCompatActivity() {
         language.setText(l)
     }
 }
+
 
 
