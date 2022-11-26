@@ -76,14 +76,11 @@ class ConfigurationActivity : AppCompatActivity() {
 
         button.setOnClickListener() {
             val intent: Intent = Intent(this, MainActivity::class.java)
+            texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+
             startActivity(intent)
         }
 
-        RestoreDefaultSettingsBtn.setOnClickListener() {
-            textGarbancete.setText(getText(R.string.restoreValues))
-            texttospeech.speak(getText(R.string.restoreValues).toString(), TextToSpeech.QUEUE_ADD, null);
-
-        }
 
         leftLanguage.setOnClickListener() {
             setLanguage()

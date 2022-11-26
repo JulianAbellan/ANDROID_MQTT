@@ -1,10 +1,13 @@
 package com.example.learnwithgarbancete
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.*
+import android.speech.tts.TextToSpeech
 import android.widget.*
 import java.util.*
 
@@ -17,6 +20,9 @@ class LanguageGame : AppCompatActivity() {
     lateinit var nivelTextLengua : TextView
     lateinit var dataLanguage : TextView
     lateinit var frases : List<String>
+    lateinit var texttospeech: TextToSpeech
+    lateinit var settings : SharedPreferences
+
     var inputText : String? = null
     val RECOGNISE_SPEECH_ACTIVITY = 102
     var i : Int = 0
@@ -24,7 +30,21 @@ class LanguageGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_language_game)
+        settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
 
+        texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
+
+            val idioma = settings.getString("idioma", "").toString()
+
+            if(idioma.equals("ENGLISH")){
+                texttospeech.setLanguage(Locale.ENGLISH)
+            }
+            if(idioma.equals("ESPAÑOL")){
+                val locSpanish = Locale("spa", "ES")
+                texttospeech.setLanguage(locSpanish)
+            }
+
+        })
         backButton = findViewById(R.id.backButton3)
         grabarText = findViewById(R.id.grabarTexto)
         nivelTextLengua = findViewById(R.id.nivelTextLengua)
@@ -37,6 +57,8 @@ class LanguageGame : AppCompatActivity() {
 
         backButton.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
+            texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+
             startActivity(intent)
         }
 

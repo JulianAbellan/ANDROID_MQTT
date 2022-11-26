@@ -1,10 +1,13 @@
 package com.example.learnwithgarbancete
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.widget.*
-import java.util.Random
+import java.util.*
 
 class MathsGame : AppCompatActivity() {
 
@@ -25,12 +28,29 @@ class MathsGame : AppCompatActivity() {
     lateinit var buttonOpB: Button
     lateinit var buttonOpC: Button
     lateinit var buttonOpD: Button
+    lateinit var settings : SharedPreferences
+    lateinit var texttospeech: TextToSpeech
+    lateinit var idioma: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maths_game)
+        settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
 
+        texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
+
+            idioma = settings.getString("idioma", "").toString()
+
+            if(idioma.equals("ENGLISH")){
+                texttospeech.setLanguage(Locale.ENGLISH)
+            }
+
+            if(idioma.equals("ESPAÑOL")){
+                val locSpanish = Locale("spa", "ES")
+                texttospeech.setLanguage(locSpanish)
+            }
+        })
 
         operacionText = findViewById(R.id.operacionText)
         nivelText = findViewById(R.id.nivelText)
@@ -44,6 +64,7 @@ class MathsGame : AppCompatActivity() {
 
         atrasMaths.setOnClickListener() {
             val intent: Intent = Intent(this, MainActivity::class.java)
+            texttospeech.speak(getString(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
             startActivity(intent)
         }
 
