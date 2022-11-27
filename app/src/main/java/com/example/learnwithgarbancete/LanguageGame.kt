@@ -96,10 +96,19 @@ class LanguageGame : AppCompatActivity() {
 
     fun ponerFrase(){
         dataLanguage.setText("${getString(R.string.say)}: ${frases?.get(i)}")
+        var valor = 0
+
+        if(settings.getString("idioma", "ENGLISH").equals("ENGLISH")){
+            valor = 1
+        } else {
+            valor = 0
+        }
+
 
         fraseActual = frases.get(i)
-        if (fraseActual.get(0) == '¿' || fraseActual.get(0) == '¡'){
-            fraseActual = (fraseActual.substring(1, fraseActual.length-1))
+        if (fraseActual.get(fraseActual.length-1) == '?' || fraseActual.get(fraseActual.length-1) == '!'){
+            fraseActual = (fraseActual.substring(valor, fraseActual.length-1))
+            println(fraseActual)
         }
 
     }

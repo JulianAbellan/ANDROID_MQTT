@@ -45,12 +45,12 @@
     <string name="siguiente">NEXT</string>
     <string name="ayuda">If you want to rewatch the tutorial, click on me!</string>
     <string name="info">Information</string>
-    <string name="activaAsist">You have activated the visual asistance</string>
-    <string name="desactivaAsist">You have desactivated the visual asistance</string>
+    <string name="activaAsist">You have activated the visual assistance</string>
+    <string name="desactivaAsist">You have deactivated the visual assistance</string>
     <string name="ChangeEnglish">You have changed language to English</string>
     <string name="ChangeSpanish">You have changed language to Spanish</string>
     <string name="activaColor">You have activated the colour blind mode</string>
-    <string name="desactivaColor">You have desactivated the colour blind mode</string>
+    <string name="desactivaColor">You have deactivated the colour blind mode</string>
     <string name="restoreValues">You have restored default values</string>
     <string name="options">Options</string>
 

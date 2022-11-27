@@ -121,53 +121,6 @@ class ConfigurationActivity : AppCompatActivity() {
         checkTutorial()
     }
 
-    fun enableTalkBack() {
-        try {
-            val am =
-                applicationContext.getSystemService(ACCESSIBILITY_SERVICE) as AccessibilityManager
-            val services = am.installedAccessibilityServiceList
-            if (services.isEmpty()) {
-                return
-            }
-            var service = services[0]
-            var enableTouchExploration = (service.flags
-                    and AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE) != 0
-            // Try to find a service supporting explore by touch.
-            if (!enableTouchExploration) {
-                val serviceCount = services.size
-                for (i in 1 until serviceCount) {
-                    val candidate = services[i]
-                    if (candidate.flags and AccessibilityServiceInfo.FLAG_REQUEST_TOUCH_EXPLORATION_MODE != 0) {
-                        enableTouchExploration = true
-                        service = candidate
-                        break
-                    }
-                }
-            }
-            val serviceInfo: ServiceInfo = service.resolveInfo.serviceInfo
-            val componentName = ComponentName(serviceInfo.packageName, serviceInfo.name)
-            val enabledServiceString: String = componentName.flattenToString()
-            val resolver: ContentResolver = applicationContext.getContentResolver()
-            Settings.Secure.putString(
-                resolver,
-                "enabled_accessibility_services",
-                enabledServiceString
-            )
-            Settings.Secure.putString(
-                resolver,
-                "touch_exploration_granted_accessibility_services",
-                enabledServiceString
-            )
-            if (enableTouchExploration) {
-                Settings.Secure.putInt(resolver, "touch_exploration_enabled", 1)
-            }
-            Settings.Secure.putInt(resolver, "accessibility_script_injection", 1)
-            Settings.Secure.putInt(resolver, "accessibility_enabled", 1)
-        } catch (e: Exception) {
-            Log.e("Device", "Failed to enable accessibility: $e")
-        }
-    }
-
     fun checkTutorial() {
         var tuto = settings.getString("tutorial", "si").toString()
         println(tuto)
