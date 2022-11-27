@@ -7,6 +7,19 @@
     android:background="@drawable/segundofondo"
     tools:context=".ConfigurationActivity">
 
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.624"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416"
+        app:srcCompat="@drawable/segundofondo" />
+
     <TextView
         android:id="@+id/blindnessMode"
         android:layout_width="182dp"

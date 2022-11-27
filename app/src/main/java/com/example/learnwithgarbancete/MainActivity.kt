@@ -1,15 +1,20 @@
 package com.example.learnwithgarbancete
 
+import android.R.color
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.support.v7.app.*
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.ColorMatrixColorFilter
 import android.os.*
 import android.speech.tts.TextToSpeech
-import android.widget.*
+import android.support.v7.app.*
 import android.view.*
+import android.widget.*
 import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,12 +31,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var edit : SharedPreferences.Editor
     lateinit var texttospeech: TextToSpeech
     lateinit var idioma: String
-
+    lateinit var image_background: ImageView
+    lateinit var bocadillo: ImageView
+    lateinit var garbancete: Button
+    lateinit var fondo : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+        settings = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE)
 
        texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
 
@@ -47,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
         maths = findViewById(R.id.mathsButton)
         language = findViewById(R.id.languageButton)
         options = findViewById(R.id.configuration)
@@ -56,6 +63,53 @@ class MainActivity : AppCompatActivity() {
         health = findViewById(R.id.health)
         geometry = findViewById(R.id.geometry)
         info = findViewById(R.id.info)
+        image_background = findViewById(R.id.imageView)
+        garbancete = findViewById(R.id.garbancete)
+        bocadillo = findViewById(R.id.imageView6)
+        fondo = findViewById(R.id.fondo)
+
+        var matrix = floatArrayOf(
+            0f, 1f, 0f, 0f, 0f,
+            0f, 0f, 1f, 0f, 0f,
+            1f, 0f, 0f, 0f, 0f,
+            0f, 0f, 0f, 1f, 0f
+        )
+
+        val protanomalia = floatArrayOf(
+            0.567f, 0.433f, 0.0f, 0.0f, 0f,
+            0.558f, 0.442f, 0.0f, 0.0f, 0f,
+            0.0f, 0.242f, 0.758f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val deuteronomalia = floatArrayOf(
+            0.625f, 0.375f, 0.0f, 0.0f, 0f,
+            0.7f, 0.3f, 0.0f, 0.0f, 0f,
+            0.0f, 0.3f, 0.7f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val tritanomalia = floatArrayOf(
+            0.95f, 0.05f, 0.0f, 0.0f, 0f,
+            0.0f, 0.433f, 0.567f, 0.0f, 0f,
+            0.0f, 0.475f, 0.525f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        matrix = tritanomalia
+
+        fondo.colorFilter = ColorMatrixColorFilter(matrix)
+        image_background.colorFilter = ColorMatrixColorFilter(matrix)
+        bocadillo.colorFilter = ColorMatrixColorFilter(matrix)
+        garbancete.background.colorFilter = ColorMatrixColorFilter(matrix)
+        maths.background.colorFilter = ColorMatrixColorFilter(matrix)
+        language.background.colorFilter = ColorMatrixColorFilter(matrix)
+        options.background.colorFilter = ColorMatrixColorFilter(matrix)
+        science.background.colorFilter = ColorMatrixColorFilter(matrix)
+        health.background.colorFilter = ColorMatrixColorFilter(matrix)
+        geometry.background.colorFilter = ColorMatrixColorFilter(matrix)
+        info.background.colorFilter = ColorMatrixColorFilter(matrix)
+
 
         language.setOnClickListener(){
             val auxText = language.text.toString()
