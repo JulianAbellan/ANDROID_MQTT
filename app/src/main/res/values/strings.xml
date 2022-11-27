@@ -49,7 +49,10 @@
     <string name="desactivaAsist">You have deactivated the visual assistance</string>
     <string name="ChangeEnglish">You have changed language to English</string>
     <string name="ChangeSpanish">You have changed language to Spanish</string>
-    <string name="activaColor">You have activated the colour blind mode</string>
+    <string name="activaColorProtanomalia">You have activated the Protanomalia colour blind mode</string>
+    <string name="activaColorDeuteronomalia">You have activated the Deuteronomalia colour blind mode</string>
+    <string name="activaColorTritanomalia">You have activated the Tritanomalia colour blind mode</string>
+
     <string name="desactivaColor">You have deactivated the colour blind mode</string>
     <string name="restoreValues">You have restored default values</string>
     <string name="options">Options</string>

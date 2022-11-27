@@ -51,9 +51,11 @@
     <string name="desactivaAsist">Has desactivado el asistente visual!</string>
     <string name="ChangeEnglish">Has cambiado el idioma al inglés</string>
     <string name="ChangeSpanish">Has cambiado el idioma al español</string>
-    <string name="activaColor">Has activado el modo daltónico</string>
     <string name="desactivaColor">Has desactivado el modo daltónico</string>
     <string name="restoreValues">Has restaurado los valores por defecto</string>
+    <string name="activaColorProtanomalia">Has activado el modo daltónico Protanomalia</string>
+    <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
+    <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
 
 
 </resources>

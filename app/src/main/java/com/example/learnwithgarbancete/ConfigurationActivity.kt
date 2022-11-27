@@ -182,18 +182,18 @@ class ConfigurationActivity : AppCompatActivity() {
         } else if (daltonico.equals("Protanomalia")){
             colorblind.setText("Protanomalia")
             aplicarTipoDaltonismo("Protanomalia")
-            textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            textGarbancete.setText(getText(R.string.activaColorProtanomalia).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColorProtanomalia).toString(), TextToSpeech.QUEUE_ADD, null);
         }else if (daltonico.equals("Deuteronomalia")){
             colorblind.setText("Deuteronomalia")
             aplicarTipoDaltonismo("Deuteronomalia")
-            textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            textGarbancete.setText(getText(R.string.activaColorDeuteronomalia).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColorDeuteronomalia).toString(), TextToSpeech.QUEUE_ADD, null);
         } else if (daltonico.equals("Tritanomalia")){
             colorblind.setText("Tritanomalia")
             aplicarTipoDaltonismo("Tritanomalia")
-            textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            textGarbancete.setText(getText(R.string.activaColorTritanomalia).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColorTritanomalia).toString(), TextToSpeech.QUEUE_ADD, null);
         }
     }
 
