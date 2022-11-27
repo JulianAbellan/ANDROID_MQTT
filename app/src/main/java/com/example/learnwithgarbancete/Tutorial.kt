@@ -61,8 +61,7 @@ class Tutorial : AppCompatActivity() {
             startActivity(intent)
         }
 
-        output.setText(getString(R.string.saludo))
-        texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
+        output.setText("")
 
         siguiente.setOnClickListener(){
             rutina(i)
@@ -74,38 +73,42 @@ class Tutorial : AppCompatActivity() {
 
         when(i){
             0 -> {
+                output.setText(getString(R.string.saludo))
+                texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
+            }
+            1 -> {
 
                 output.setText(getString(R.string.dialogo1))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
             }
-            1 -> {
+            2 -> {
                 flecha1.visibility = View.VISIBLE
                 output.setText(getString(R.string.dialogo2))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
 
             }
-            2 -> {
+            3 -> {
                 flecha1.visibility = View.INVISIBLE
                 flecha2.visibility = View.VISIBLE
                 output.setText(getString(R.string.dialogo3))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
 
             }
-            3 -> {
+            4 -> {
                 flecha2.visibility = View.INVISIBLE
                 flecha3.visibility = View.VISIBLE
                 output.setText(getString(R.string.dialogo4))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
 
             }
-            4 -> {
+            5 -> {
                 flecha3.visibility = View.INVISIBLE
                 flecha4.visibility = View.VISIBLE
                 output.setText(getString(R.string.dialogo5))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
 
             }
-            5 -> {
+            6 -> {
                 flecha4.visibility = View.INVISIBLE
                 output.setText(getString(R.string.despedida))
                 texttospeech.speak(output.text.toString(), TextToSpeech.QUEUE_ADD, null)
