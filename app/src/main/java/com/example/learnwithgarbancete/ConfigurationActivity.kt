@@ -178,22 +178,22 @@ class ConfigurationActivity : AppCompatActivity() {
             colorblind.setText("Normal")
             aplicarTipoDaltonismo("Normal")
             textGarbancete.setText(getText(R.string.desactivaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         } else if (daltonico.equals("Protanomalia")){
             colorblind.setText("Protanomalia")
             aplicarTipoDaltonismo("Protanomalia")
             textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         }else if (daltonico.equals("Deuteronomalia")){
             colorblind.setText("Deuteronomalia")
             aplicarTipoDaltonismo("Deuteronomalia")
             textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         } else if (daltonico.equals("Tritanomalia")){
             colorblind.setText("Tritanomalia")
             aplicarTipoDaltonismo("Tritanomalia")
             textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         }
     }
 
