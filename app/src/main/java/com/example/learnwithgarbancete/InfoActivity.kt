@@ -39,7 +39,7 @@ class InfoActivity : AppCompatActivity() {
 
         backButton3.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
-            texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
 
             startActivity(intent)
         }

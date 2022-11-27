@@ -76,7 +76,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
         button.setOnClickListener() {
             val intent: Intent = Intent(this, MainActivity::class.java)
-            texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
 
             startActivity(intent)
         }
@@ -111,10 +111,12 @@ class ConfigurationActivity : AppCompatActivity() {
                 textGarbancete.setText(getText(R.string.activaAsist))
                 auxText = textGarbancete.text.toString()
                 texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+                edit.putString("tts", "SI")
             }else{
                 textGarbancete.setText(getText(R.string.desactivaAsist))
                 auxText = textGarbancete.text.toString()
                 texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+                edit.putString("tts", "NO")
             }
         }
 
@@ -161,11 +163,11 @@ class ConfigurationActivity : AppCompatActivity() {
         if (daltonico.equals("ON")) {
             colorblind.setText("ON")
             textGarbancete.setText(getText(R.string.activaColor).toString())
-            texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         } else {
             colorblind.setText("OFF")
             textGarbancete.setText(getText(R.string.desactivaColor).toString())
-            texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         }
     }
 
@@ -203,7 +205,7 @@ class ConfigurationActivity : AppCompatActivity() {
             chooseLanguage("ENGLISH")
             texttospeech.setLanguage(Locale.ENGLISH)
             textGarbancete.setText(getText(R.string.ChangeEnglish).toString())
-            texttospeech.speak(getText(R.string.ChangeEnglish).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.ChangeEnglish).toString(), TextToSpeech.QUEUE_ADD, null);
 
         } else if (l.equals("ENGLISH")) {
             chooseLanguage("ESPAÑOL")
@@ -211,7 +213,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
             texttospeech.setLanguage(locSpanish)
             textGarbancete.setText(getText(R.string.ChangeSpanish).toString())
-            texttospeech.speak(getText(R.string.ChangeSpanish).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.ChangeSpanish).toString(), TextToSpeech.QUEUE_ADD, null);
 
         } else {
             language.setText(cargarpreferencias2())

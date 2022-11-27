@@ -149,12 +149,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/playwithme"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/configuration"
@@ -168,6 +166,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="154dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <TextView
+        android:id="@+id/playwithme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playwithme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
 
 
 </android.support.constraint.ConstraintLayout>

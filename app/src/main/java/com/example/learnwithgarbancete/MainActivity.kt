@@ -59,14 +59,14 @@ class MainActivity : AppCompatActivity() {
 
         language.setOnClickListener(){
             val auxText = language.text.toString()
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, LanguageGame::class.java)
             startActivity(intent)
         }
 
         options.setOnClickListener() {
-            texttospeech.speak(getString(R.string.options).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getString(R.string.options).toString(), TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, ConfigurationActivity::class.java)
             startActivity(intent)
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         maths.setOnClickListener() {
             val auxText = maths.text.toString()
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, MathsGame::class.java)
             startActivity(intent)
@@ -82,27 +82,27 @@ class MainActivity : AppCompatActivity() {
 
         science.setOnClickListener(){
             val auxText = science.text.toString()
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             //val intent : Intent = Intent(this, LanguageGame::class.java)
             //startActivity(intent)
         }
         health.setOnClickListener(){
             val auxText = health.text.toString()
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, HealthyUnhealthy::class.java)
             startActivity(intent)
         }
         geometry.setOnClickListener(){
             val auxText = geometry.text.toString()
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
 
         }
         info.setOnClickListener(){
             val auxText = getString(R.string.info)
-            texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)

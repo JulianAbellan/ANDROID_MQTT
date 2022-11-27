@@ -64,7 +64,7 @@ class MathsGame : AppCompatActivity() {
 
         atrasMaths.setOnClickListener() {
             val intent: Intent = Intent(this, MainActivity::class.java)
-            texttospeech.speak(getString(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getString(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
             startActivity(intent)
         }
 
