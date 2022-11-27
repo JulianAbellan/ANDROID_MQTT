@@ -14,6 +14,7 @@ import android.view.accessibility.AccessibilityManager
 import android.widget.*
 import java.io.*
 import java.util.*
+import kotlin.collections.HashMap
 
 
 class ConfigurationActivity : AppCompatActivity() {
@@ -114,13 +115,16 @@ class ConfigurationActivity : AppCompatActivity() {
                 auxText = textGarbancete.text.toString()
                 texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
                 edit.putString("tts", "SI")
+                edit.commit()
             }else{
                 textGarbancete.setText(getText(R.string.desactivaAsist))
                 auxText = textGarbancete.text.toString()
                 texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
                 edit.putString("tts", "NO")
+                edit.commit()
             }
         }
+
 
         checkTutorial()
     }
@@ -165,6 +169,8 @@ class ConfigurationActivity : AppCompatActivity() {
 
         daltonico = settings.getString("daltonico", "Normal").toString()
         cargarDaltonico(daltonico)
+
+        switchVisual.isChecked = (settings.getString("tts","NO").equals("SI"))
     }
 
     fun cargarDaltonico(daltonico: String) {
@@ -275,7 +281,8 @@ class ConfigurationActivity : AppCompatActivity() {
             chooseLanguage("ENGLISH")
             texttospeech.setLanguage(Locale.ENGLISH)
             textGarbancete.setText(getText(R.string.ChangeEnglish).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.ChangeEnglish).toString(), TextToSpeech.QUEUE_ADD, null);
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.ChangeEnglish).toString(), TextToSpeech.QUEUE_ADD, null)
+
 
         } else if (l.equals("ENGLISH")) {
             chooseLanguage("ESPAÑOL")
