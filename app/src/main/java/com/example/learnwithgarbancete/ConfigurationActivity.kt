@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.*
 import android.content.pm.*
 import android.content.res.Configuration
+import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
 import android.provider.Settings
 import android.speech.tts.TextToSpeech
@@ -35,7 +36,7 @@ class ConfigurationActivity : AppCompatActivity() {
     lateinit var texttospeech: TextToSpeech
     lateinit var auxText: String
     lateinit var RestoreDefaultSettingsBtn: Button
-
+    lateinit var fondo: ImageView
 
 
 
@@ -69,7 +70,7 @@ class ConfigurationActivity : AppCompatActivity() {
         switchVisual = findViewById(R.id.switchVisual)
         textGarbancete =  findViewById(R.id.textView)
         RestoreDefaultSettingsBtn =  findViewById(R.id.RestoreDefaultSettingsBtn)
-
+        fondo = findViewById(R.id.fondo)
 
         cargarpreferencias()
         edit = settings.edit()
@@ -92,6 +93,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
         rightDalt.setOnClickListener() {
             swapDalt()
+
         }
 
         leftDalt.setOnClickListener() {
@@ -140,12 +142,18 @@ class ConfigurationActivity : AppCompatActivity() {
     }
 
     fun swapDalt() {
-        if (colorblind.getText().equals("ON")) {
-            cargarDaltonico("OFF")
-            guardarpreferenciasDalt("OFF")
-        } else if (colorblind.getText().equals("OFF")) {
-            cargarDaltonico("ON")
-            guardarpreferenciasDalt("ON")
+        if (colorblind.getText().equals("Normal")) {
+            cargarDaltonico("Protanomalia")
+            guardarpreferenciasDalt("Protanomalia")
+        } else if (colorblind.getText().equals("Protanomalia")) {
+            cargarDaltonico("Deuteronomalia")
+            guardarpreferenciasDalt("Deuteronomalia")
+        }else if (colorblind.getText().equals("Deuteronomalia")) {
+            cargarDaltonico("Tritanomalia")
+            guardarpreferenciasDalt("Tritanomalia")
+        }else if (colorblind.getText().equals("Tritanomalia")) {
+            cargarDaltonico("Normal")
+            guardarpreferenciasDalt("Normal")
         }
     }
 
@@ -155,20 +163,81 @@ class ConfigurationActivity : AppCompatActivity() {
         idioma = settings.getString("idioma", "ENGLISH").toString()
         chooseLanguage(idioma)
 
-        daltonico = settings.getString("daltonico", "OFF").toString()
+        daltonico = settings.getString("daltonico", "Normal").toString()
         cargarDaltonico(daltonico)
     }
 
     fun cargarDaltonico(daltonico: String) {
-        if (daltonico.equals("ON")) {
-            colorblind.setText("ON")
-            textGarbancete.setText(getText(R.string.activaColor).toString())
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
-        } else {
-            colorblind.setText("OFF")
+        if (daltonico.equals("Normal")) {
+            colorblind.setText("Normal")
+            aplicarTipoDaltonismo("Normal")
             textGarbancete.setText(getText(R.string.desactivaColor).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+        } else if (daltonico.equals("Protanomalia")){
+            colorblind.setText("Protanomalia")
+            aplicarTipoDaltonismo("Protanomalia")
+            textGarbancete.setText(getText(R.string.activaColor).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+        }else if (daltonico.equals("Deuteronomalia")){
+            colorblind.setText("Deuteronomalia")
+            aplicarTipoDaltonismo("Deuteronomalia")
+            textGarbancete.setText(getText(R.string.activaColor).toString())
+            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
+        } else if (daltonico.equals("Tritanomalia")){
+            colorblind.setText("Tritanomalia")
+            aplicarTipoDaltonismo("Tritanomalia")
+            textGarbancete.setText(getText(R.string.activaColor).toString())
             if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.desactivaColor).toString(), TextToSpeech.QUEUE_ADD, null);
         }
+    }
+
+    fun aplicarTipoDaltonismo(dalt: String) {
+
+        val protanomalia = floatArrayOf(
+            0.567f, 0.433f, 0.0f, 0.0f, 0f,
+            0.558f, 0.442f, 0.0f, 0.0f, 0f,
+            0.0f, 0.242f, 0.758f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val deuteronomalia = floatArrayOf(
+            0.625f, 0.375f, 0.0f, 0.0f, 0f,
+            0.7f, 0.3f, 0.0f, 0.0f, 0f,
+            0.0f, 0.3f, 0.7f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val tritanomalia = floatArrayOf(
+            0.95f, 0.05f, 0.0f, 0.0f, 0f,
+            0.0f, 0.433f, 0.567f, 0.0f, 0f,
+            0.0f, 0.475f, 0.525f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+        var matrix = floatArrayOf(
+            1f, 0f, 0f, 0f, 0f,
+            0f, 1f, 0f, 0f, 0f,
+            0f, 0f, 1f, 0f, 0f,
+            0f, 0f, 0f, 1f, 0f
+        )
+
+        if (dalt.equals("Protanomalia")){
+            matrix = protanomalia
+        }else if(dalt.equals("Deuteronomalia")){
+            matrix = deuteronomalia
+        }else if(dalt.equals("Tritanomalia")){
+            matrix = tritanomalia
+        }
+
+
+        garbancete.colorFilter = ColorMatrixColorFilter(matrix)
+        button.background.colorFilter = ColorMatrixColorFilter(matrix)
+        fondo.colorFilter = ColorMatrixColorFilter(matrix)
+        vpd.background.colorFilter = ColorMatrixColorFilter(matrix)
+        leftLanguage.background.colorFilter = ColorMatrixColorFilter(matrix)
+        rightLanguage.background.colorFilter = ColorMatrixColorFilter(matrix)
+        leftDalt.background.colorFilter = ColorMatrixColorFilter(matrix)
+        rightDalt.background.colorFilter = ColorMatrixColorFilter(matrix)
+
     }
 
     fun cargarpreferencias2(): String {
@@ -179,6 +248,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
     fun establecerValoresPorDefecto() {
         chooseLanguage("ENGLISH")
+        cargarDaltonico("Normal")
     }
 
     fun guardarpreferenciasIdioma(l: String) {

@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var bocadillo: ImageView
     lateinit var garbancete: Button
     lateinit var fondo : ImageView
+    lateinit var tipodaltonico : String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,48 +70,8 @@ class MainActivity : AppCompatActivity() {
         bocadillo = findViewById(R.id.imageView6)
         fondo = findViewById(R.id.fondo)
 
-        var matrix = floatArrayOf(
-            0f, 1f, 0f, 0f, 0f,
-            0f, 0f, 1f, 0f, 0f,
-            1f, 0f, 0f, 0f, 0f,
-            0f, 0f, 0f, 1f, 0f
-        )
-
-        val protanomalia = floatArrayOf(
-            0.567f, 0.433f, 0.0f, 0.0f, 0f,
-            0.558f, 0.442f, 0.0f, 0.0f, 0f,
-            0.0f, 0.242f, 0.758f, 0.0f, 0f,
-            0.0f, 0.0f, 0.0f, 1.0f, 0f
-        )
-
-        val deuteronomalia = floatArrayOf(
-            0.625f, 0.375f, 0.0f, 0.0f, 0f,
-            0.7f, 0.3f, 0.0f, 0.0f, 0f,
-            0.0f, 0.3f, 0.7f, 0.0f, 0f,
-            0.0f, 0.0f, 0.0f, 1.0f, 0f
-        )
-
-        val tritanomalia = floatArrayOf(
-            0.95f, 0.05f, 0.0f, 0.0f, 0f,
-            0.0f, 0.433f, 0.567f, 0.0f, 0f,
-            0.0f, 0.475f, 0.525f, 0.0f, 0f,
-            0.0f, 0.0f, 0.0f, 1.0f, 0f
-        )
-
-        matrix = tritanomalia
-
-        fondo.colorFilter = ColorMatrixColorFilter(matrix)
-        image_background.colorFilter = ColorMatrixColorFilter(matrix)
-        bocadillo.colorFilter = ColorMatrixColorFilter(matrix)
-        garbancete.background.colorFilter = ColorMatrixColorFilter(matrix)
-        maths.background.colorFilter = ColorMatrixColorFilter(matrix)
-        language.background.colorFilter = ColorMatrixColorFilter(matrix)
-        options.background.colorFilter = ColorMatrixColorFilter(matrix)
-        science.background.colorFilter = ColorMatrixColorFilter(matrix)
-        health.background.colorFilter = ColorMatrixColorFilter(matrix)
-        geometry.background.colorFilter = ColorMatrixColorFilter(matrix)
-        info.background.colorFilter = ColorMatrixColorFilter(matrix)
-
+        tipodaltonico = settings.getString("daltonico", "").toString()
+        aplicarTipoDaltonismo(tipodaltonico)
 
         language.setOnClickListener(){
             val auxText = language.text.toString()
@@ -192,5 +154,57 @@ class MainActivity : AppCompatActivity() {
             config,
             baseContext.resources.displayMetrics
         )
+    }
+
+    fun aplicarTipoDaltonismo(dalt: String) {
+
+        val protanomalia = floatArrayOf(
+            0.567f, 0.433f, 0.0f, 0.0f, 0f,
+            0.558f, 0.442f, 0.0f, 0.0f, 0f,
+            0.0f, 0.242f, 0.758f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val deuteronomalia = floatArrayOf(
+            0.625f, 0.375f, 0.0f, 0.0f, 0f,
+            0.7f, 0.3f, 0.0f, 0.0f, 0f,
+            0.0f, 0.3f, 0.7f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val tritanomalia = floatArrayOf(
+            0.95f, 0.05f, 0.0f, 0.0f, 0f,
+            0.0f, 0.433f, 0.567f, 0.0f, 0f,
+            0.0f, 0.475f, 0.525f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        var matrix = floatArrayOf(
+            1f, 0f, 0f, 0f, 0f,
+            0f, 1f, 0f, 0f, 0f,
+            0f, 0f, 1f, 0f, 0f,
+            0f, 0f, 0f, 1f, 0f
+        )
+
+        if (dalt.equals("Protanomalia")){
+            matrix = protanomalia
+        }else if(dalt.equals("Deuteronomalia")){
+            matrix = deuteronomalia
+        }else if(dalt.equals("Tritanomalia")){
+            matrix = tritanomalia
+        }
+
+        fondo.colorFilter = ColorMatrixColorFilter(matrix)
+        image_background.colorFilter = ColorMatrixColorFilter(matrix)
+        bocadillo.colorFilter = ColorMatrixColorFilter(matrix)
+        garbancete.background.colorFilter = ColorMatrixColorFilter(matrix)
+        maths.background.colorFilter = ColorMatrixColorFilter(matrix)
+        language.background.colorFilter = ColorMatrixColorFilter(matrix)
+        options.background.colorFilter = ColorMatrixColorFilter(matrix)
+        science.background.colorFilter = ColorMatrixColorFilter(matrix)
+        health.background.colorFilter = ColorMatrixColorFilter(matrix)
+        geometry.background.colorFilter = ColorMatrixColorFilter(matrix)
+        info.background.colorFilter = ColorMatrixColorFilter(matrix)
+
     }
 }
