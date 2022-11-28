@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         maths.setOnClickListener() {
-            val auxText = maths.text.toString()
+            val auxText = getString(R.string.maths_name2)
             if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
             val intent : Intent = Intent(this, MathsGame::class.java)

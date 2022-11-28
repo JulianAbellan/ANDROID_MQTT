@@ -31,12 +31,13 @@ class ConfigurationActivity : AppCompatActivity() {
     lateinit var daltonico: String
     lateinit var vpd: Button
     lateinit var edit: SharedPreferences.Editor
+
+
     lateinit var garbancete: ImageView
     lateinit var switchVisual: Switch
     lateinit var textGarbancete: TextView
     lateinit var texttospeech: TextToSpeech
     lateinit var auxText: String
-    lateinit var RestoreDefaultSettingsBtn: Button
     lateinit var fondo: ImageView
 
 
@@ -70,7 +71,6 @@ class ConfigurationActivity : AppCompatActivity() {
         garbancete = findViewById(R.id.garbanConf)
         switchVisual = findViewById(R.id.switchVisual)
         textGarbancete =  findViewById(R.id.textView)
-        RestoreDefaultSettingsBtn =  findViewById(R.id.RestoreDefaultSettingsBtn)
         fondo = findViewById(R.id.fondo)
 
         cargarpreferencias()
@@ -168,12 +168,14 @@ class ConfigurationActivity : AppCompatActivity() {
         chooseLanguage(idioma)
 
         daltonico = settings.getString("daltonico", "Normal").toString()
-        cargarDaltonico(daltonico)
+        cargarDaltonico2(daltonico)
 
         switchVisual.isChecked = (settings.getString("tts","NO").equals("SI"))
     }
 
     fun cargarDaltonico(daltonico: String) {
+
+
         if (daltonico.equals("Normal")) {
             colorblind.setText("Normal")
             aplicarTipoDaltonismo("Normal")
@@ -194,6 +196,24 @@ class ConfigurationActivity : AppCompatActivity() {
             aplicarTipoDaltonismo("Tritanomalia")
             textGarbancete.setText(getText(R.string.activaColorTritanomalia).toString())
             if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(getText(R.string.activaColorTritanomalia).toString(), TextToSpeech.QUEUE_ADD, null);
+        }
+    }
+
+    fun cargarDaltonico2(daltonico: String) {
+
+
+        if (daltonico.equals("Normal")) {
+            colorblind.setText("Normal")
+            aplicarTipoDaltonismo("Normal")
+        } else if (daltonico.equals("Protanomalia")){
+            colorblind.setText("Protanomalia")
+            aplicarTipoDaltonismo("Protanomalia")
+        }else if (daltonico.equals("Deuteronomalia")){
+            colorblind.setText("Deuteronomalia")
+            aplicarTipoDaltonismo("Deuteronomalia")
+        } else if (daltonico.equals("Tritanomalia")){
+            colorblind.setText("Tritanomalia")
+            aplicarTipoDaltonismo("Tritanomalia")
         }
     }
 
@@ -255,6 +275,13 @@ class ConfigurationActivity : AppCompatActivity() {
     fun establecerValoresPorDefecto() {
         chooseLanguage("ENGLISH")
         cargarDaltonico("Normal")
+        edit.putString("daltonico", "Normal")
+        edit.commit()
+
+        switchVisual.isChecked = false;
+        edit.putString("tts", "NO")
+        edit.commit()
+        println(settings.getString("tts","NOF"))
     }
 
     fun guardarpreferenciasIdioma(l: String) {

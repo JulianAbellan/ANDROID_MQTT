@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">LEARN WITH GARBANCETE</string>
     <string name="maths_name">MATES</string>
+    <string name="maths_name2">mates</string>
     <string name="health_name">SALUD</string>
     <string name="geometry_name">GEOMETRÍA</string>
     <string name="language_name">INGLÉS</string>
