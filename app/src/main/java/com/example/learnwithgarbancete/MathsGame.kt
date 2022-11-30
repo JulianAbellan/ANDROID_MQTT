@@ -3,9 +3,11 @@ package com.example.learnwithgarbancete
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
+import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.*
 import java.util.*
 
@@ -37,6 +39,8 @@ class MathsGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maths_game)
         settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+
+
 
         texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
 
@@ -76,6 +80,7 @@ class MathsGame : AppCompatActivity() {
             }
         }
 
+
         buttonOpB.setOnClickListener() {
             if(Integer.parseInt(buttonOpB.getText() as String) == resultado){
                 checkResults(true)
@@ -100,9 +105,43 @@ class MathsGame : AppCompatActivity() {
             }
         }
 
+        buttonOpA.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(buttonOpA.text as String?, TextToSpeech.QUEUE_ADD, null);
+                return false
+            }
+        })
+        buttonOpB.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(buttonOpB.text as String?, TextToSpeech.QUEUE_ADD, null);
+                return false
+            }
+        })
+        buttonOpC.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(buttonOpC.text as String?, TextToSpeech.QUEUE_ADD, null);
+                return false
+            }
+        })
+
+        buttonOpD.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(buttonOpD.text as String?, TextToSpeech.QUEUE_ADD, null);
+                return false
+            }
+        })
+
+
+        cargardalt()
         rutina()
     }
 
+    fun cargardalt(){
+        var dalt = settings.getString("daltonismo","OFF")
+        if (dalt != null) {
+            aplicarTipoDaltonismo(dalt)
+        }
+    }
 
     fun rutina() {
         i+=1
@@ -205,5 +244,49 @@ class MathsGame : AppCompatActivity() {
             }
             else -> throw Exception("Ha habido un error en la operacion. No es 0 ó 1")
         }
+    }
+
+    fun aplicarTipoDaltonismo(dalt: String) {
+
+        val protanomalia = floatArrayOf(
+            0.567f, 0.433f, 0.0f, 0.0f, 0f,
+            0.558f, 0.442f, 0.0f, 0.0f, 0f,
+            0.0f, 0.242f, 0.758f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val deuteronomalia = floatArrayOf(
+            0.625f, 0.375f, 0.0f, 0.0f, 0f,
+            0.7f, 0.3f, 0.0f, 0.0f, 0f,
+            0.0f, 0.3f, 0.7f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val tritanomalia = floatArrayOf(
+            0.95f, 0.05f, 0.0f, 0.0f, 0f,
+            0.0f, 0.433f, 0.567f, 0.0f, 0f,
+            0.0f, 0.475f, 0.525f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        var matrix = floatArrayOf(
+            1f, 0f, 0f, 0f, 0f,
+            0f, 1f, 0f, 0f, 0f,
+            0f, 0f, 1f, 0f, 0f,
+            0f, 0f, 0f, 1f, 0f
+        )
+
+        if (dalt.equals("Protanomalia")){
+            matrix = protanomalia
+        }else if(dalt.equals("Deuteronomalia")){
+            matrix = deuteronomalia
+        }else if(dalt.equals("Tritanomalia")){
+            matrix = tritanomalia
+        }
+
+        operacionText?.background?.colorFilter = ColorMatrixColorFilter(matrix)
+        nivelText?.background?.colorFilter = ColorMatrixColorFilter(matrix)
+        score?.background?.colorFilter = ColorMatrixColorFilter(matrix)
+
     }
 }

@@ -263,7 +263,6 @@ class ConfigurationActivity : AppCompatActivity() {
         rightLanguage.background.colorFilter = ColorMatrixColorFilter(matrix)
         leftDalt.background.colorFilter = ColorMatrixColorFilter(matrix)
         rightDalt.background.colorFilter = ColorMatrixColorFilter(matrix)
-
     }
 
     fun cargarpreferencias2(): String {

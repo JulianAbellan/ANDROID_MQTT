@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.ColorMatrixColorFilter
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.*
@@ -62,6 +63,7 @@ class LanguageGame : AppCompatActivity() {
             startActivity(intent)
         }
 
+        aplicardalt()
         generarFrases()
         rutina()
 
@@ -96,6 +98,9 @@ class LanguageGame : AppCompatActivity() {
 
     fun ponerFrase(){
         dataLanguage.setText("${getString(R.string.say)}: ${frases?.get(i)}")
+
+        if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(dataLanguage.text as String?, TextToSpeech.QUEUE_ADD, null);
+
         var valor = 0
 
         if(settings.getString("idioma", "ENGLISH").equals("ENGLISH")){
@@ -145,5 +150,53 @@ class LanguageGame : AppCompatActivity() {
         }
     }
 
+    fun aplicardalt(){
+        var dalt = settings.getString("daltonismo","OFF")
+        if (dalt != null) {
+            aplicarTipoDaltonismo(dalt)
+        }
+    }
+
+    fun aplicarTipoDaltonismo(dalt: String) {
+
+        val protanomalia = floatArrayOf(
+            0.567f, 0.433f, 0.0f, 0.0f, 0f,
+            0.558f, 0.442f, 0.0f, 0.0f, 0f,
+            0.0f, 0.242f, 0.758f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val deuteronomalia = floatArrayOf(
+            0.625f, 0.375f, 0.0f, 0.0f, 0f,
+            0.7f, 0.3f, 0.0f, 0.0f, 0f,
+            0.0f, 0.3f, 0.7f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        val tritanomalia = floatArrayOf(
+            0.95f, 0.05f, 0.0f, 0.0f, 0f,
+            0.0f, 0.433f, 0.567f, 0.0f, 0f,
+            0.0f, 0.475f, 0.525f, 0.0f, 0f,
+            0.0f, 0.0f, 0.0f, 1.0f, 0f
+        )
+
+        var matrix = floatArrayOf(
+            1f, 0f, 0f, 0f, 0f,
+            0f, 1f, 0f, 0f, 0f,
+            0f, 0f, 1f, 0f, 0f,
+            0f, 0f, 0f, 1f, 0f
+        )
+
+        if (dalt.equals("Protanomalia")){
+            matrix = protanomalia
+        }else if(dalt.equals("Deuteronomalia")){
+            matrix = deuteronomalia
+        }else if(dalt.equals("Tritanomalia")){
+            matrix = tritanomalia
+        }
+
+        grabar.background.colorFilter = ColorMatrixColorFilter(matrix)
+        nivelTextLengua.background.colorFilter = ColorMatrixColorFilter(matrix)
+    }
 
 }
