@@ -15,7 +15,7 @@ class LanguageGame : AppCompatActivity() {
 
     lateinit var fraseActual: String
     lateinit var backButton: Button
-    lateinit var grabar: ImageButton
+    lateinit var grabar: Button
     lateinit var grabarText: TextView
     lateinit var nivelTextLengua : TextView
     lateinit var dataLanguage : TextView

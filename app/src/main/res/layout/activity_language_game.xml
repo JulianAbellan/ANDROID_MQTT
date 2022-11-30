@@ -5,7 +5,8 @@
     android:id="@+id/constrint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LanguageGame">
+    tools:context=".LanguageGame"
+    android:background="@drawable/fondomates">
 
     <Button
         android:id="@+id/backButton3"
@@ -18,49 +19,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/grabarButton"
-        android:layout_width="143dp"
-        android:layout_height="123dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="194dp"
+        android:layout_height="187dp"
+        android:background="@drawable/microfono"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_btn_speak_now"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/grabarTexto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="488dp"
+        android:layout_marginTop="464dp"
+        android:background="#ADEFED"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="CLICK THE MICROPHONE TO START RECORDING!" />
 
     <TextView
-        android:id="@+id/dataLanguage"
+        android:id="@+id/nivelTextLengua"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#D6ADEF"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.171" />
 
-    <TextView
-        android:id="@+id/nivelTextLengua"
-        android:layout_width="66dp"
-        android:layout_height="37dp"
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="167dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.356"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.461"
+        app:srcCompat="@drawable/garbancete" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="212dp"
+        android:layout_height="172dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <TextView
+        android:id="@+id/dataLanguage"
+        android:layout_width="113dp"
+        android:layout_height="114dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
 
 </android.support.constraint.ConstraintLayout>
