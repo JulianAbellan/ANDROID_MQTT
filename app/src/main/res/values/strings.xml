@@ -57,6 +57,7 @@
     <string name="desactivaColor">You have deactivated the colour blind mode</string>
     <string name="restoreValues">You have restored default values</string>
     <string name="options">Options</string>
+    <string name="timeout">OOPS! TIME IS OUT!</string>
 
 
 </resources>

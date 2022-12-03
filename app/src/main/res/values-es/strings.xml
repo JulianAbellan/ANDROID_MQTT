@@ -57,6 +57,6 @@
     <string name="activaColorProtanomalia">Has activado el modo daltónico Protanomalia</string>
     <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
     <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
-
+    <string name="timeout">¡VAYA!¡SE HA ACABADO EL TIEMPO!</string>
 
 </resources>

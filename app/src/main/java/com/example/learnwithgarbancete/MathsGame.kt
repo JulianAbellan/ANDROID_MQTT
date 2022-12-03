@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -33,7 +34,8 @@ class MathsGame : AppCompatActivity() {
     lateinit var settings : SharedPreferences
     lateinit var texttospeech: TextToSpeech
     lateinit var idioma: String
-
+    lateinit var txtTiempo : TextView
+    var timeLeftMs : Int = 20000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +67,7 @@ class MathsGame : AppCompatActivity() {
         buttonOpD = findViewById(R.id.buttonOpD)
         atrasMaths = findViewById(R.id.atrasMaths)
         resumenText = findViewById(R.id.resumenText)
+        txtTiempo = findViewById(R.id.txtTiempo)
 
         atrasMaths.setOnClickListener() {
             val intent: Intent = Intent(this, MainActivity::class.java)
@@ -131,7 +134,6 @@ class MathsGame : AppCompatActivity() {
             }
         })
 
-
         cargardalt()
         rutina()
     }
@@ -150,6 +152,7 @@ class MathsGame : AppCompatActivity() {
         mostrarOp()
         crearOpciones()
         setOperaciones()
+        play(this)
     }
 
     fun checkResults(correct: Boolean){
@@ -200,6 +203,25 @@ class MathsGame : AppCompatActivity() {
         buttonOpC.setText("" + lista[2])
         buttonOpD.setText("" + lista[3])
     }
+
+    fun play(view: MathsGame){
+        var tiempoSegundos= 20
+        var tiempoMilisegundos=tiempoSegundos*1000
+        object : CountDownTimer(tiempoMilisegundos.toLong(),1000){
+            override fun onFinish() {
+                txtTiempo.setText("FINISH")
+                resumenText?.text = getString(R.string.timeout)
+                Thread.sleep(3000)
+                rutina()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                val tiempoSegundos=(millisUntilFinished/1000).toInt()+1
+                txtTiempo?.text=tiempoSegundos.toString().padStart(2,'0')
+            }
+        }.start()
+    }
+
 
     fun crearOpciones() {
         var num1 = 0
@@ -289,4 +311,6 @@ class MathsGame : AppCompatActivity() {
         score?.background?.colorFilter = ColorMatrixColorFilter(matrix)
 
     }
+
+
 }
