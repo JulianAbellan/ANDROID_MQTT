@@ -20,11 +20,14 @@ class GeometryGame : AppCompatActivity(){
     lateinit var figura3: ImageView
     var x = arrayOf<Float>(0F,0F,0F)
     var y = arrayOf<Float>(0F,0F,0F)
+    var initial_x = arrayOf<Float>(0F,0F,0F)
+    var initial_y = arrayOf<Float>(0F,0F,0F)
     var dx : Float = 0F
     var dy : Float = 0F
     lateinit var sombra1: ImageView
     lateinit var sombra2: ImageView
     lateinit var sombra3: ImageView
+    lateinit var outputGeo: TextView
 
     lateinit var levelGeo : TextView
     lateinit var back : Button
@@ -50,13 +53,11 @@ class GeometryGame : AppCompatActivity(){
         sombra2 = findViewById(R.id.sombra2)
         figura3 = findViewById(R.id.figura3)
         sombra3 = findViewById(R.id.sombra3)
+        outputGeo = findViewById(R.id.outputGeo)
 
         levelGeo = findViewById(R.id.levelGeo)
         back = findViewById(R.id.backboton)
 
-        println("x:${x}, y:${y}")
-        x = arrayOf<Float>(figura1.x, figura2.x, figura3.x)
-        y = arrayOf<Float>(figura1.y, figura2.y, figura3.y)
         imagenes = listOf(figura1, figura2, figura3)
         sombras = listOf(sombra1, sombra2, sombra3)
 
@@ -77,12 +78,16 @@ class GeometryGame : AppCompatActivity(){
 
         figura1.setOnClickListener(){
             figura = 0
+            outputGeo.setText(getString(R.string.empiezaGeo))
         }
         figura2.setOnClickListener(){
             figura = 1
+            outputGeo.setText(getString(R.string.empiezaGeo))
         }
         figura3.setOnClickListener(){
             figura = 2
+            outputGeo.setText(getString(R.string.empiezaGeo))
+
         }
 
 
@@ -98,12 +103,28 @@ class GeometryGame : AppCompatActivity(){
     }
 
     fun rutina(){
+        if(i==0){
+            initial_x = arrayOf<Float>(0F, 351F, 688F)
+            initial_y = arrayOf<Float>(376F, 376F, 376F)
+            outputGeo.setText(getString(R.string.empiezaGeo))
+        }
         i++
-        contador=0
+        terminar()
         ponerNivel(i)
         ponerFiguras()
     }
 
+    fun terminar(){
+        if(i>5){
+            figura1.isEnabled = false
+            figura2.isEnabled = false
+            figura3.isEnabled = false
+            sombra1.isEnabled = false
+            sombra2.isEnabled = false
+            sombra3.isEnabled = false
+
+        }
+    }
     fun ponerNivel(i:Int){
         levelGeo.setText("${getString(R.string.level_name)} ${i}/5")
     }
@@ -115,6 +136,18 @@ class GeometryGame : AppCompatActivity(){
         figura1.setImageResource(figuras[0])
         figura2.setImageResource(figuras[1])
         figura3.setImageResource(figuras[2])
+        figura1.visibility = View.VISIBLE
+        figura2.visibility = View.VISIBLE
+        figura3.visibility = View.VISIBLE
+
+        if (i!=1) {
+            figura1.x = initial_x[0]
+            figura2.x = initial_x[1]
+            figura3.x = initial_x[2]
+            figura1.y = initial_y[0]
+            figura2.y = initial_y[1]
+            figura3.y = initial_y[2]
+        }
 
         sombra1.setImageResource(df[0])
         sombra2.setImageResource(df[1])
@@ -146,13 +179,13 @@ class GeometryGame : AppCompatActivity(){
 
         if(action == MotionEvent.ACTION_DOWN){
 
-            println("akshdfos")
+
             evento_x= evento.getX()
             evento_y= evento.getY()
         }
 
         if(action == MotionEvent.ACTION_MOVE){
-            println(figura)
+
             if(figura > -1) {
 
                 sombra = relacion.get(figura)!!
@@ -174,13 +207,21 @@ class GeometryGame : AppCompatActivity(){
                 if (distancia_x <= 10 && distancia_y <= 10) {
                     imagenes[figura].visibility = View.INVISIBLE
                     sombras[sombra].setColorFilter(Color.GREEN)
-                    contador++
 
-                    if(contador == 3) rutina()
+
+                    checkFinal()
                 }
             }
         }
 
         return super.onTouchEvent(evento);
+    }
+
+    fun checkFinal() {
+        if (imagenes[0].visibility.equals(View.INVISIBLE) && imagenes[1].visibility.equals(View.INVISIBLE) && imagenes[2].visibility.equals(View.INVISIBLE)){
+            figura=-1
+            outputGeo.text = getString(R.string.confGeo)
+            rutina()
+        }
     }
 }

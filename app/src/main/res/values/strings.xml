@@ -58,6 +58,8 @@
     <string name="restoreValues">You have restored default values</string>
     <string name="options">Options</string>
     <string name="timeout">OOPS! TIME IS OUT!</string>
+    <string name="empiezaGeo">SELECT ONE FIGURE AND DROP IT TO ITS SHADOW</string>
+    <string name="confGeo">VERY GOOD!</string>
 
 
 </resources>

@@ -58,5 +58,7 @@
     <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
     <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
     <string name="timeout">¡VAYA!¡SE HA ACABADO EL TIEMPO!</string>
+    <string name="empiezaGeo">SELECCIONA UNA FIGURA Y ARRÁSTRALA HASTA SU SILUETA</string>
+    <string name="confGeo">¡MUY BIEN!</string>
 
 </resources>
