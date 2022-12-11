@@ -3,6 +3,7 @@ package com.example.learnwithgarbancete
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -35,6 +36,7 @@ class MathsGame : AppCompatActivity() {
     lateinit var texttospeech: TextToSpeech
     lateinit var idioma: String
     lateinit var txtTiempo : TextView
+    lateinit var contador : CountDownTimer
     var timeLeftMs : Int = 20000
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -158,6 +160,7 @@ class MathsGame : AppCompatActivity() {
     fun checkResults(correct: Boolean){
         if(correct) {
             resumenText?.setText("${getString(R.string.correct)}")
+            contador.cancel()
             scorePuntos += 1
         } else {
             resumenText?.setText("${getString(R.string.incorrect)}")
@@ -207,17 +210,26 @@ class MathsGame : AppCompatActivity() {
     fun play(view: MathsGame){
         var tiempoSegundos= 20
         var tiempoMilisegundos=tiempoSegundos*1000
-        object : CountDownTimer(tiempoMilisegundos.toLong(),1000){
+        contador = object : CountDownTimer(tiempoMilisegundos.toLong(),1000){
             override fun onFinish() {
                 txtTiempo.setText("FINISH")
                 resumenText?.text = getString(R.string.timeout)
-                Thread.sleep(3000)
+                Thread.sleep(2000)
                 rutina()
             }
 
             override fun onTick(millisUntilFinished: Long) {
                 val tiempoSegundos=(millisUntilFinished/1000).toInt()+1
-                txtTiempo?.text=tiempoSegundos.toString().padStart(2,'0')
+
+                if(tiempoSegundos > 5) {
+                    txtTiempo.setTextColor(Color.BLACK)
+                    txtTiempo?.text = tiempoSegundos.toString().padStart(2, '0')
+                } else {
+                    txtTiempo.setTextColor(Color.RED)
+                    txtTiempo?.text = tiempoSegundos.toString().padStart(2, '0')
+                }
+
+
             }
         }.start()
     }

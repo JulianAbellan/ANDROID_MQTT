@@ -114,7 +114,8 @@ class MainActivity : AppCompatActivity() {
             val auxText = geometry.text.toString()
             if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
 
-
+            val intent : Intent = Intent(this, GeometryGame::class.java)
+            startActivity(intent)
         }
         info.setOnClickListener(){
             val auxText = getString(R.string.info)
