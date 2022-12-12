@@ -1,14 +1,13 @@
 package com.example.learnwithgarbancete
 
-import android.R.color
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.ColorMatrixColorFilter
 import android.os.*
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.support.v7.app.*
 import android.view.*
@@ -36,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var garbancete: Button
     lateinit var fondo : ImageView
     lateinit var tipodaltonico : String
+    val RECOGNISE_SPEECH_ACTIVITY = 102
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         garbancete = findViewById(R.id.garbancete)
         bocadillo = findViewById(R.id.imageView6)
         fondo = findViewById(R.id.fondo)
+        garbancete = findViewById(R.id.garbancete)
 
         tipodaltonico = settings.getString("daltonico", "").toString()
         aplicarTipoDaltonismo(tipodaltonico)
@@ -125,6 +127,75 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        garbancete.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                escucharComando()
+                return false
+            }
+        })
+
+    }
+
+    fun escucharComando(){
+        askSpeechInput()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RECOGNISE_SPEECH_ACTIVITY && resultCode == Activity.RESULT_OK){
+            val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+            procesarComando(result?.get(0).toString())
+        }
+    }
+
+    fun procesarComando(result : String){
+        if (result.contains(getString(R.string.maths_name), ignoreCase = true) || result.contains(getString(R.string.maths_name2), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.mathsVoz), TextToSpeech.QUEUE_ADD, null);
+            val intent : Intent = Intent(this, MathsGame::class.java)
+            startActivity(intent)
+        } else if (result.contains(getString(R.string.idiomaChange), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.languageVoz), TextToSpeech.QUEUE_ADD, null);
+            if(idioma.equals("ESPAÑOL")){
+                chooseLanguage("ENGLISH")
+            } else {
+                chooseLanguage("ESPAÑOL")
+            }
+        } else if (result.contains(getString(R.string.health_name), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.healthVoz), TextToSpeech.QUEUE_ADD, null);
+            val intent : Intent = Intent(this, HealthyUnhealthy::class.java)
+            startActivity(intent)
+        } else if (result.contains(getString(R.string.geometry_name), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.geometryoz), TextToSpeech.QUEUE_ADD, null);
+            val intent : Intent = Intent(this, GeometryGame::class.java)
+            startActivity(intent)
+        } else if (result.contains(getString(R.string.conf_name), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.confVoz), TextToSpeech.QUEUE_ADD, null);
+            val intent : Intent = Intent(this, ConfigurationActivity::class.java)
+            startActivity(intent)
+        } else if (result.contains(getString(R.string.language_name), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.languageVoz), TextToSpeech.QUEUE_ADD, null);
+            val intent : Intent = Intent(this, LanguageGame::class.java)
+            startActivity(intent)
+        } else if (result.contains(getString(R.string.blindassitantmode), ignoreCase = true)){
+            texttospeech.speak(getString(R.string.visualChange), TextToSpeech.QUEUE_ADD, null);
+            edit.putString("tts", "SI")
+            edit.commit()
+        }
+    }
+
+
+
+    fun askSpeechInput() {
+        if (!SpeechRecognizer.isRecognitionAvailable(this)){
+            Toast.makeText(this, "Your device does not support voice recognision", Toast.LENGTH_SHORT).show()
+        } else {
+            val i = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "${getString(R.string.idioma)}")
+            i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, Locale.getDefault())
+            i.putExtra(RecognizerIntent.EXTRA_PROMPT, "${getString(R.string.saysmth)}")
+            startActivityForResult(i, RECOGNISE_SPEECH_ACTIVITY)
+        }
     }
 
     fun cargarpreferencias() {

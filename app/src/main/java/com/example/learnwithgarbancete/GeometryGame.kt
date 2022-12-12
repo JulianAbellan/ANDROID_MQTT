@@ -43,12 +43,12 @@ class GeometryGame : AppCompatActivity(){
     var sombras = listOf<ImageView>()
     var relacion = hashMapOf<Int, Int>()
     var i=0
-    var contador=0
     var grados1 = 0F
     var grados2 = 0F
     var grados3 = 0F
     var grados = arrayOf(grados1, grados2, grados3)
     var flag = false
+    lateinit var random : Random
 
 
 
@@ -69,6 +69,8 @@ class GeometryGame : AppCompatActivity(){
 
         levelGeo = findViewById(R.id.levelGeo)
         back = findViewById(R.id.backboton)
+
+        random = Random()
 
         imagenes = listOf(figura1, figura2, figura3)
         rotar = listOf(rotar1, rotar2, rotar3)
@@ -133,6 +135,42 @@ class GeometryGame : AppCompatActivity(){
             }
         })
 
+        rotar2.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                // while(true){
+                if(grados2>=360F){
+                    grados[1]=grados2
+                    figura2.setRotation(0F)
+                } else {
+                    grados2+=15
+                    grados[1]=grados2
+                    figura2.setRotation(grados2)
+                }
+
+                println(figura2.getRotation())
+                //  }
+                return false
+            }
+        })
+
+        rotar3.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+                // while(true){
+                if(grados3>=360F){
+                    grados[2]=grados3
+                    figura3.setRotation(0F)
+                } else {
+                    grados3+=15
+                    grados[2]=grados3
+                    figura3.setRotation(grados3)
+                }
+
+                println(figura1.getRotation())
+                //  }
+                return false
+            }
+        })
+
         rotar2.setOnClickListener(){
             if(grados2>=360F){
                 grados[1]=grados2
@@ -184,7 +222,7 @@ class GeometryGame : AppCompatActivity(){
     }
 
     fun terminar(){
-        if(i>5){
+        if(i>3){
             figura1.isEnabled = false
             figura2.isEnabled = false
             figura3.isEnabled = false
@@ -211,6 +249,11 @@ class GeometryGame : AppCompatActivity(){
         rotar1.visibility = View.VISIBLE
         rotar2.visibility = View.VISIBLE
         rotar3.visibility = View.VISIBLE
+
+        figura1.rotation = random.nextInt(360) + 0.0F
+        figura2.rotation = random.nextInt(360) + 0.0F
+        figura3.rotation = random.nextInt(360) + 0.0F
+
 
         if (i!=1) {
             figura1.x = initial_x[0]
@@ -243,9 +286,6 @@ class GeometryGame : AppCompatActivity(){
         }
 
     }
-
-
-
 
     var evento_x = 0F
     var evento_y = 0F
@@ -286,37 +326,38 @@ class GeometryGame : AppCompatActivity(){
 
                 if (distancia_x <= 10 && distancia_y <= 10) {
                     var element = figuras[figura]
-                        when (element){
+                    when (element){
                             R.drawable.circulo -> {
                                 flag = true
                             }
                             R.drawable.cuadrado -> {
-                                if (grados[figura] ==  0F || grados[figura] == 90F || grados[figura] ==  180F || grados[figura] == 270F || grados[figura] == 360F){
+                                if ((grados[figura] in 0F..5F) || grados[figura] in 85F..95F || grados[figura] in 175F..185F || grados[figura] in 265F..275f || grados[figura] in 355f.. 360F){
                                     flag = true
                                 }
                             }
                             R.drawable.star -> {
-                                if (grados[figura] ==  0F || grados[figura] == 72F || grados[figura] ==  144F || grados[figura] == 216F || grados[figura] == 288F|| grados[figura] == 360F){
+                                println(grados[figura])
+                                if ((grados[figura] in 0F..5F)  || grados[figura] in 67f.. 77F || grados[figura] in 139f..149F || grados[figura] in 211F..221f || grados[figura] in 283F..293f || grados[figura] in 355f.. 360F){
                                     flag = true
                                 }
                             }
                             R.drawable.triangulo -> {
-                                if (grados[figura] ==  0F || grados[figura] == 120F || grados[figura] ==  240F || grados[figura] == 360F){
+                                if ((grados[figura] in 0F..5F)  || grados[figura] in 115F..125f || grados[figura] in  235F..245f || grados[figura] in 355f.. 360F){
                                     flag = true
                                 }
                             }
                             R.drawable.luna -> {
-                                if (grados[figura] == 0F || grados[figura]==360F){
+                                if ((grados[figura] in 0F..5F)  || grados[figura] in 355f.. 360F){
                                     flag=true
                                 }
                             }
                             R.drawable.sol -> {
-                                if (grados[figura] ==  0F || grados[figura] == 36F || grados[figura] ==  72F || grados[figura] == 108F || grados[figura] == 144F || grados[figura] == 180F || grados[figura] == 180F || grados[figura] == 216F || grados[figura] == 252F || grados[figura] == 180F || grados[figura] == 288F || grados[figura] == 324F || grados[figura] == 360F ){
+                                if ((grados[figura] in 0F..5F)  || grados[figura] in 31F..41f || grados[figura] in  67F..77f || grados[figura] in 103F..113f || grados[figura] in 139F..149f || grados[figura] in 175F..185f || grados[figura] in 211F..221f || grados[figura] in 247F..257f || grados[figura] in 283F..293f || grados[figura] in 319F..329f || grados[figura] in 355f.. 360F ){
                                     flag = true
                                 }
                             }
                             R.drawable.rombo -> {
-                                if (grados[figura] ==  0F || grados[figura] ==  180F || grados[figura] == 360F){
+                                if ((grados[figura] in 0F..5F)  || grados[figura] in 175F..185F || grados[figura] in 355f.. 360F){
                                     flag = true
                                 }
                             }
@@ -325,6 +366,7 @@ class GeometryGame : AppCompatActivity(){
 
 
                     if (flag) {
+                        println("awanabunbambamwachuwario")
                         flag = false
                         imagenes[figura].visibility = View.INVISIBLE
                         rotar[figura].visibility = View.INVISIBLE

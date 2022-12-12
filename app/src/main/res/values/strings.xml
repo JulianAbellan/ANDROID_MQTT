@@ -6,7 +6,6 @@
     <string name="geometry_name">GEOMETRY</string>
     <string name="language_name">SPANISH</string>
     <string name="science_name">SCIENCE</string>
-    <string name="playwithme">PLAY WITH ME!</string>
     <string name="score_name">Score</string>
     <string name="level_name">Level</string>
     <string name="puntuaje_bajo">OOPS... YOU GOT</string>
@@ -60,6 +59,15 @@
     <string name="timeout">OOPS! TIME IS OUT!</string>
     <string name="empiezaGeo">SELECT ONE FIGURE AND DROP IT TO ITS SHADOW</string>
     <string name="confGeo">VERY GOOD!</string>
+    <string name="playwithme">TELL ME WHAT YOU WANT TO DO!</string>
+    <string name="mathsVoz">OK! OPENING MATHS GAME!</string>
+    <string name="healthVoz">OK! OPENING HEALTH GAME!</string>
+    <string name="geometryoz">OK! OPENING GEOMETRY GAME!</string>
+    <string name="languageVoz">OK! OPENING SPANISH GAME!</string>
+    <string name="confVoz">OK! OPENING CONFIGURATION!</string>
+    <string name="idiomaChange">OK! SETTING SPANISH!</string>
+    <string name="visualChange">OK! TURNING VISUAL ASSISTANCE ON!</string>
+    <string name="conf_name">configuration</string>
 
 
 </resources>
