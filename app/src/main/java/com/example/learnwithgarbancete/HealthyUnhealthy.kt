@@ -83,6 +83,7 @@ class HealthyUnhealthy : AppCompatActivity() {
         }
 
         sensorEventListener = object : SensorEventListener {
+            override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
             override fun onSensorChanged(sensorEvent: SensorEvent) {
                 val x = sensorEvent.values[0]
                 if (x < -5) {
@@ -93,50 +94,32 @@ class HealthyUnhealthy : AppCompatActivity() {
                     giroIzq()
                 }
             }
-            override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
         }
         if (sensor == null) finish()
+
 
     }
 
     fun giroDerecha(){
         if(count != list.size) {
-            var aux = list.get(count)
-            NumberScore.setText("GiroDer " + count)
-
-            if(aux == zanahoria){
-                count++
-                NumberScore.setText("Zanah " + count)
-
-            }
-
-            if(aux == lechuga || aux == manzana || aux == zanahoria) {
-                textGarbancete.setText("Healthy!")
                 changeImage()
             }else
             {
-                textGarbancete.setText("Mal hecho Healthy!")
                 clickGarbancete()
             }
-        }
     }
+
 
     fun giroIzq(){
         if(count != list.size) {
-            var aux = list.get(count)
-            NumberScore.setText("GiroIzq " + count)
-
-            if(aux == hamburguesa || aux == pizza){
-                textGarbancete.setText("UNNNNHealthy!")
                 changeImage()
             }
             else
             {
-                textGarbancete.setText("Mal hecho UNNNNHealthy!")
                 clickGarbancete()
             }
-        }
     }
+
 
     fun changeImage(){
 
