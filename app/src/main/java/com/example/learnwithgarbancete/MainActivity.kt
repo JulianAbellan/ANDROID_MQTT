@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var maths: Button;
     lateinit var language : Button;
     lateinit var options : Button;
-    lateinit var science: Button;
     lateinit var health: Button;
     lateinit var geometry: Button;
     lateinit var info: Button;
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         language = findViewById(R.id.languageButton)
         options = findViewById(R.id.configuration)
         conf = ConfigurationActivity()
-        science = findViewById(R.id.science)
         health = findViewById(R.id.health)
         geometry = findViewById(R.id.geometry)
         info = findViewById(R.id.info)
@@ -94,14 +92,6 @@ class MainActivity : AppCompatActivity() {
 
             val intent : Intent = Intent(this, MathsGame::class.java)
             startActivity(intent)
-        }
-
-        science.setOnClickListener(){
-            val auxText = science.text.toString()
-            if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(auxText, TextToSpeech.QUEUE_ADD, null);
-
-            //val intent : Intent = Intent(this, LanguageGame::class.java)
-            //startActivity(intent)
         }
         health.setOnClickListener(){
             val auxText = health.text.toString()
@@ -201,7 +191,6 @@ class MainActivity : AppCompatActivity() {
         maths.background.colorFilter = ColorMatrixColorFilter(matrix)
         language.background.colorFilter = ColorMatrixColorFilter(matrix)
         options.background.colorFilter = ColorMatrixColorFilter(matrix)
-        science.background.colorFilter = ColorMatrixColorFilter(matrix)
         health.background.colorFilter = ColorMatrixColorFilter(matrix)
         geometry.background.colorFilter = ColorMatrixColorFilter(matrix)
         info.background.colorFilter = ColorMatrixColorFilter(matrix)
