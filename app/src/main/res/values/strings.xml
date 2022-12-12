@@ -57,6 +57,11 @@
     <string name="desactivaColor">You have deactivated the colour blind mode</string>
     <string name="restoreValues">You have restored default values</string>
     <string name="options">Options</string>
+    <string name="hamburguesa">Hamburguer</string>
+    <string name="zanahoria">Carrot</string>
+    <string name="lechuga">Lettuce</string>
+    <string name="manzana">Apple</string>
+    <string name="pizza">Pizza</string>
 
 
 </resources>

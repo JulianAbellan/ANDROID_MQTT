@@ -58,5 +58,12 @@
     <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
     <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
 
+    <string name="hamburguesa">Hamburguesa</string>
+    <string name="zanahoria">Zanahoria</string>
+    <string name="lechuga">Lechuga</string>
+    <string name="manzana">Manzana</string>
+    <string name="pizza">Pizza</string>
+
+
 
 </resources>

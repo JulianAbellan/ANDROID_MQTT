@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".HealthyUnhealthy">
 
+
+    <ImageView
+        android:id="@+id/textGarbancete"
+        android:layout_width="135dp"
+        android:layout_height="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78"
+        app:srcCompat="@drawable/bocadillo" />
+
     <Button
         android:id="@+id/backButton3"
         android:layout_width="wrap_content"
@@ -90,7 +103,7 @@
         android:layout_height="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.477"
