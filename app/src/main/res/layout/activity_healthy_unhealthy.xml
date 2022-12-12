@@ -8,15 +8,15 @@
 
 
     <ImageView
-        android:id="@+id/textGarbancete"
-        android:layout_width="135dp"
-        android:layout_height="88dp"
+        android:id="@+id/bocadillo"
+        android:layout_width="190dp"
+        android:layout_height="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
+        app:layout_constraintVertical_bias="0.837"
         app:srcCompat="@drawable/bocadillo" />
 
     <Button
@@ -34,7 +34,7 @@
         android:id="@+id/HealthyText"
         android:layout_width="328dp"
         android:layout_height="131dp"
-        android:text="HEALTHY OR UNHEALTHY?"
+        android:text=""
         android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,15 +44,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.086" />
 
+
     <TextView
         android:id="@+id/Score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Score: "
+        android:layout_width="222dp"
+        android:layout_height="45dp"
+        android:text=""
+        android:textAlignment="viewEnd"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.252" />
@@ -65,25 +67,23 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toEndOf="@+id/Score"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.252" />
 
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="342dp"
-        android:layout_height="187dp"
+        android:layout_width="116dp"
+        android:layout_height="143dp"
         android:rotation="-21"
         android:rotationY="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463"
-        app:srcCompat="@drawable/carrot" />
+        app:layout_constraintVertical_bias="0.541"
+        app:srcCompat="@drawable/zanahoria" />
 
     <ImageView
         android:id="@+id/flechaverde"
@@ -94,7 +94,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478"
+        app:layout_constraintVertical_bias="0.35000002"
         app:srcCompat="@drawable/flechaverde" />
 
     <ImageView
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477"
+        app:layout_constraintVertical_bias="0.35000002"
         app:srcCompat="@drawable/flecharoja" />
 
     <TextView
@@ -116,12 +116,12 @@
         android:text="UNHEALTHY"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintBottom_toBottomOf="@+id/flecharoja"
+        app:layout_constraintEnd_toEndOf="@+id/flecharoja"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="@+id/flecharoja"
+        app:layout_constraintTop_toTopOf="@+id/flecharoja"
+        app:layout_constraintVertical_bias="0.475" />
 
     <TextView
         android:id="@+id/healthyright"
@@ -130,12 +130,12 @@
         android:text="HEALTHY"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintBottom_toBottomOf="@+id/flechaverde"
+        app:layout_constraintEnd_toEndOf="@+id/flechaverde"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/flechaverde"
+        app:layout_constraintTop_toTopOf="@+id/flechaverde"
+        app:layout_constraintVertical_bias="0.508" />
 
     <TextView
         android:id="@+id/FoodDescription"
@@ -148,7 +148,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.654" />
+
+    <TextView
+        android:id="@+id/textGarbancete"
+        android:layout_width="120dp"
+        android:layout_height="83dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bocadillo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/bocadillo"
+        app:layout_constraintTop_toTopOf="@+id/bocadillo"
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
         android:id="@+id/garbancete"
@@ -157,6 +173,7 @@
         android:background="@drawable/garbancete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"

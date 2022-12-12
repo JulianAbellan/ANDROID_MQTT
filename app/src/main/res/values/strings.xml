@@ -62,6 +62,11 @@
     <string name="lechuga">Lettuce</string>
     <string name="manzana">Apple</string>
     <string name="pizza">Pizza</string>
-
+    <string name="buentrabajosiguiente">Good job! Click on me to go to the next one</string>
+    <string name="felicidades">Congratulations!</string>
+    <string name="vuelveaintentarlo">You\'re wrong!!, click on me and try again</string>
+    <string name="holahealthy">Hi! Rotate the phone to one way or another if the food is healthy or not</string>
+    <string name="score">Score:</string>
+    <string name="titulohealthy">HEALTHY OR UNHEALTHY?</string>
 
 </resources>

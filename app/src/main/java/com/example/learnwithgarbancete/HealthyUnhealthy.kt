@@ -11,6 +11,7 @@ import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -25,6 +26,8 @@ class HealthyUnhealthy : AppCompatActivity() {
     lateinit var garbancete: Button
     lateinit var HealthyText : TextView
     lateinit var textGarbancete : TextView
+    lateinit var titulo: TextView
+    lateinit var score : TextView
     lateinit var NumberScore : TextView
     lateinit var list: kotlin.collections.List<Int>
     var hamburguesa = R.drawable.hamburguesa
@@ -48,7 +51,8 @@ class HealthyUnhealthy : AppCompatActivity() {
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         count = 0
-        list = listOf<Int>(zanahoria,hamburguesa,lechuga,pizza,manzana)
+        list = listOf(zanahoria,hamburguesa,lechuga,pizza,manzana).shuffled()
+
 
         texttospeech = TextToSpeech(this, TextToSpeech.OnInitListener {
 
@@ -71,13 +75,17 @@ class HealthyUnhealthy : AppCompatActivity() {
         HealthyText = findViewById(R.id.FoodDescription)
         NumberScore = findViewById(R.id.NumberScore)
         textGarbancete = findViewById(R.id.textGarbancete)
+        titulo = findViewById(R.id.HealthyText)
 
-        tipodaltonico = settings.getString("daltonico", "").toString()
-        aplicarTipoDaltonismo(tipodaltonico)
+        score = findViewById(R.id.Score)
+
+        inicioAplicacion()
 
         backButton2.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
-            texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
+
+            if(settings.getString("tts","NO").equals("SI"))
+                texttospeech.speak(getText(R.string.back).toString(), TextToSpeech.QUEUE_ADD, null);
 
             startActivity(intent)
         }
@@ -96,56 +104,91 @@ class HealthyUnhealthy : AppCompatActivity() {
             }
         }
         if (sensor == null) finish()
+    }
 
+    fun inicioAplicacion(){
+        score.setText(R.string.score)
+        titulo.setText(R.string.titulohealthy)
+        textGarbancete.setText(R.string.holahealthy)
+        fotocentro.setImageResource(list[count])
+        changeText(list[count])
 
+        tipodaltonico = settings.getString("daltonico", "").toString()
+        aplicarTipoDaltonismo(tipodaltonico)
     }
 
     fun giroDerecha(){
-        if(count != list.size) {
-                changeImage()
-            }else
-            {
-                clickGarbancete()
-            }
+        if(checkHealthy())
+            changeImage()
+        else {
+            error()
+        }
     }
-
 
     fun giroIzq(){
-        if(count != list.size) {
-                changeImage()
-            }
-            else
-            {
-                clickGarbancete()
-            }
+        if(!checkHealthy())
+
+            changeImage()
+        else {
+            error()
+        }
     }
 
-
-    fun changeImage(){
-
-        var siguenteImage = list.get(count)
-        NumberScore.setText("Change " + count)
-
-        if(siguenteImage == hamburguesa){
-            HealthyText.setText(R.string.hamburguesa)
-        }
-        if(siguenteImage == pizza){
-            HealthyText.setText(R.string.pizza)
-        }
-        if(siguenteImage == lechuga){
-            HealthyText.setText(R.string.lechuga)
-        }
-        if(siguenteImage == manzana){
-            HealthyText.setText(R.string.manzana)
-        }
-        if(siguenteImage == zanahoria){
-            HealthyText.setText(R.string.zanahoria)
-        }
-        fotocentro.setImageResource(siguenteImage)
-        count++
-
+    fun error(){
+        textGarbancete.setText(R.string.vuelveaintentarlo)
         clickGarbancete()
     }
+
+    fun checkHealthy(): Boolean {
+        var aux = list[count]
+        if((aux == hamburguesa) || (aux == pizza))
+            return false
+
+        return true;
+    }
+
+    fun checkEnd(){
+        stop()
+        garbancete.setOnClickListener(null)
+        fotocentro.setVisibility(View.INVISIBLE)
+        HealthyText.setVisibility(View.INVISIBLE)
+
+        textGarbancete.setText(R.string.felicidades)
+    }
+
+    fun changeImage(){
+        count++
+        if(count != (list.size)) {
+            var siguienteImage = list[count]
+
+            changeText(siguienteImage)
+
+            fotocentro.setImageResource(siguienteImage)
+            textGarbancete.setText(R.string.buentrabajosiguiente)
+
+            clickGarbancete()
+        }else
+            checkEnd()
+    }
+    fun changeText(aux:Int){
+        if (aux == hamburguesa) {
+            HealthyText.setText(R.string.hamburguesa)
+        }
+        if (aux == pizza) {
+            HealthyText.setText(R.string.pizza)
+        }
+        if (aux == lechuga) {
+            HealthyText.setText(R.string.lechuga)
+        }
+        if (aux == manzana) {
+            HealthyText.setText(R.string.manzana)
+        }
+        if (aux == zanahoria) {
+            HealthyText.setText(R.string.zanahoria)
+        }
+    }
+
+
 
     fun start() {
         sensorManager.registerListener(
@@ -156,8 +199,10 @@ class HealthyUnhealthy : AppCompatActivity() {
     }
 
     fun clickGarbancete(){
-        garbancete.setOnClickListener(){
-            start()
+        if(count != (list.size)){
+            garbancete.setOnClickListener(){
+                start()
+        }
         }
     }
 
