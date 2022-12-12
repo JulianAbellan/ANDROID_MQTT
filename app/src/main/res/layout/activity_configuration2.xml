@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/segundofondo"
     tools:context=".ConfigurationActivity">
 
 
@@ -12,13 +11,13 @@
         android:id="@+id/fondo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fondoDerecha"
+        app:layout_constraintStart_toStartOf="@id/fondoIzquierda"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
-        app:srcCompat="@drawable/segundofondo" />
+        app:srcCompat="@drawable/segundofondo"
+        />
 
     <TextView
         android:id="@+id/blindnessMode"
@@ -27,86 +26,87 @@
         android:text="@string/blindassitantmode"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.103" />
 
     <Button
         android:id="@+id/leftDaltMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/blindmode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesIzqDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesAbajoArriba"
         app:layout_constraintVertical_bias="0.422" />
 
     <TextView
         android:id="@+id/blindnessMode4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
         android:text="@string/colourblindmode"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoArriba"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+        app:layout_constraintTop_toTopOf="@id/colourArriba" />
 
     <TextView
         android:id="@+id/changeLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/changelanguage"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:autoSizeTextType="uniform"
+
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaArriba"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+        app:layout_constraintTop_toTopOf="@id/languageArriba"
+         />
 
     <Button
         android:id="@+id/rightDaltMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/blindmode"
         android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesDerIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesAbajoArriba"
+        app:layout_constraintVertical_bias="0.422" />
 
     <Button
         android:id="@+id/rightLanguageMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/blindmode"
         android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesDerIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesArribaArriba"
+        app:layout_constraintVertical_bias="0.27" />
 
     <Button
         android:id="@+id/leftLanguageMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/blindmode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesIzqDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesArribaArriba"
+        app:layout_constraintVertical_bias="0.27" />
 
     <Switch
         android:id="@+id/switchVisual"
@@ -145,15 +145,13 @@
 
     <Button
         android:id="@+id/RestoreDefaultSettingsBtn"
-        android:layout_width="262dp"
-        android:layout_height="38dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/defaultvalues"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintBottom_toBottomOf="@id/RestoreAbajo"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/RestoreArriba"/>
 
     <Button
         android:id="@+id/buttonBack"
@@ -204,16 +202,124 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="117dp"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/ayuda"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.799"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesIzqIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesIzqDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.315" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesDerIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.679" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesDerDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.794" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesArribaArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.251" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesArribaAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.317" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesAbajoArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.393" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesAbajoAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.461" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/RestoreAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+    <android.support.constraint.Guideline
+        android:id="@+id/RestoreArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.481" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondoIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondoDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/TextosDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.743" />
+    <android.support.constraint.Guideline
+        android:id="@+id/TextosIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.255" />
+    <android.support.constraint.Guideline
+        android:id="@+id/colourArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+    <android.support.constraint.Guideline
+        android:id="@+id/languageArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.205" />
 
 </android.support.constraint.ConstraintLayout>
 

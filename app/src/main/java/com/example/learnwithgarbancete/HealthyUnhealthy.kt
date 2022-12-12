@@ -107,9 +107,6 @@ class HealthyUnhealthy : AppCompatActivity() {
     }
 
     fun inicioAplicacion(){
-        score.setText(R.string.score)
-        titulo.setText(R.string.titulohealthy)
-        textGarbancete.setText(R.string.holahealthy)
         fotocentro.setImageResource(list[count])
         changeText(list[count])
 
@@ -127,7 +124,6 @@ class HealthyUnhealthy : AppCompatActivity() {
 
     fun giroIzq(){
         if(!checkHealthy())
-
             changeImage()
         else {
             error()
