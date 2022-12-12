@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".GeometryGame">
 
+    <Button
+        android:id="@+id/rotar1"
+        android:layout_width="64dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rotar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <Button
+        android:id="@+id/rotar2"
+        android:layout_width="64dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rotar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
     <ImageView
         android:id="@+id/sombra2"
         android:layout_width="139dp"
@@ -138,5 +162,17 @@
         app:layout_constraintStart_toStartOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12"
         app:layout_constraintVertical_bias="0.425" />
+
+    <Button
+        android:id="@+id/rotar3"
+        android:layout_width="64dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rotar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
 
 </android.support.constraint.ConstraintLayout>

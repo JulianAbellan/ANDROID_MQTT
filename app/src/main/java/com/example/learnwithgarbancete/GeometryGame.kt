@@ -18,6 +18,9 @@ class GeometryGame : AppCompatActivity(){
     lateinit var figura1: ImageView
     lateinit var figura2: ImageView
     lateinit var figura3: ImageView
+    lateinit var rotar1: Button
+    lateinit var rotar2: Button
+    lateinit var rotar3: Button
     var x = arrayOf<Float>(0F,0F,0F)
     var y = arrayOf<Float>(0F,0F,0F)
     var initial_x = arrayOf<Float>(0F,0F,0F)
@@ -34,12 +37,18 @@ class GeometryGame : AppCompatActivity(){
     lateinit var settings : SharedPreferences
     lateinit var texttospeech : TextToSpeech
     lateinit var figuras : kotlin.collections.List<Int>
+    var rotar = listOf<Button>()
     var figura : Int = -1
     var imagenes = listOf<ImageView>()
     var sombras = listOf<ImageView>()
     var relacion = hashMapOf<Int, Int>()
     var i=0
     var contador=0
+    var grados1 = 0F
+    var grados2 = 0F
+    var grados3 = 0F
+    var grados = arrayOf(grados1, grados2, grados3)
+    var flag = false
 
 
 
@@ -53,12 +62,16 @@ class GeometryGame : AppCompatActivity(){
         sombra2 = findViewById(R.id.sombra2)
         figura3 = findViewById(R.id.figura3)
         sombra3 = findViewById(R.id.sombra3)
+        rotar1 = findViewById(R.id.rotar1)
+        rotar2 = findViewById(R.id.rotar2)
+        rotar3 = findViewById(R.id.rotar3)
         outputGeo = findViewById(R.id.outputGeo)
 
         levelGeo = findViewById(R.id.levelGeo)
         back = findViewById(R.id.backboton)
 
         imagenes = listOf(figura1, figura2, figura3)
+        rotar = listOf(rotar1, rotar2, rotar3)
         sombras = listOf(sombra1, sombra2, sombra3)
 
         settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
@@ -87,6 +100,62 @@ class GeometryGame : AppCompatActivity(){
         figura3.setOnClickListener(){
             figura = 2
             outputGeo.setText(getString(R.string.empiezaGeo))
+
+        }
+
+        rotar1.setOnClickListener(){
+            if(grados1>=360F){
+                grados[0]=grados1
+                figura1.setRotation(0F)
+            } else {
+                grados1+=2
+                grados[0]=grados1
+                figura1.setRotation(grados1)
+            }
+            println(figura1.getRotation())
+        }
+
+        rotar1.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(v: View?): Boolean {
+               // while(true){
+                    if(grados1>=360F){
+                        grados[0]=grados1
+                        figura1.setRotation(0F)
+                    } else {
+                        grados1+=15
+                        grados[0]=grados1
+                        figura1.setRotation(grados1)
+                    }
+
+                    println(figura1.getRotation())
+              //  }
+                return false
+            }
+        })
+
+        rotar2.setOnClickListener(){
+            if(grados2>=360F){
+                grados[1]=grados2
+                figura2.setRotation(0F)
+            } else {
+                grados2+=2
+                grados[1]=grados2
+                figura2.setRotation(grados2)
+            }
+
+            println(figura2.getRotation())
+        }
+        rotar3.setOnClickListener(){
+            if(grados3>=360F){
+                grados[2]=grados3
+                figura3.setRotation(0F)
+            } else {
+                grados3+=2
+                grados[2]=grados3
+                figura3.setRotation(grados3)
+            }
+
+            println(figura3.getRotation())
 
         }
 
@@ -139,6 +208,9 @@ class GeometryGame : AppCompatActivity(){
         figura1.visibility = View.VISIBLE
         figura2.visibility = View.VISIBLE
         figura3.visibility = View.VISIBLE
+        rotar1.visibility = View.VISIBLE
+        rotar2.visibility = View.VISIBLE
+        rotar3.visibility = View.VISIBLE
 
         if (i!=1) {
             figura1.x = initial_x[0]
@@ -147,6 +219,12 @@ class GeometryGame : AppCompatActivity(){
             figura1.y = initial_y[0]
             figura2.y = initial_y[1]
             figura3.y = initial_y[2]
+            rotar1.x = initial_x[0]
+            rotar2.x = initial_x[1]
+            rotar3.x = initial_x[2]
+            rotar1.y = initial_y[0]
+            rotar2.y = initial_y[1]
+            rotar3.y = initial_y[2]
         }
 
         sombra1.setImageResource(df[0])
@@ -195,6 +273,8 @@ class GeometryGame : AppCompatActivity(){
 
                 imagenes[figura].setX(imagenes[figura].getX() + dx)
                 imagenes[figura].setY(imagenes[figura].getY() + dy)
+                rotar[figura].setX(rotar[figura].getX() + dx)
+                rotar[figura].setY(rotar[figura].getY() + dy)
 
 
                 evento_x = evento.getX()
@@ -205,11 +285,54 @@ class GeometryGame : AppCompatActivity(){
 
 
                 if (distancia_x <= 10 && distancia_y <= 10) {
-                    imagenes[figura].visibility = View.INVISIBLE
-                    sombras[sombra].setColorFilter(Color.GREEN)
+                    var element = figuras[figura]
+                        when (element){
+                            R.drawable.circulo -> {
+                                flag = true
+                            }
+                            R.drawable.cuadrado -> {
+                                if (grados[figura] ==  0F || grados[figura] == 90F || grados[figura] ==  180F || grados[figura] == 270F || grados[figura] == 360F){
+                                    flag = true
+                                }
+                            }
+                            R.drawable.star -> {
+                                if (grados[figura] ==  0F || grados[figura] == 72F || grados[figura] ==  144F || grados[figura] == 216F || grados[figura] == 288F|| grados[figura] == 360F){
+                                    flag = true
+                                }
+                            }
+                            R.drawable.triangulo -> {
+                                if (grados[figura] ==  0F || grados[figura] == 120F || grados[figura] ==  240F || grados[figura] == 360F){
+                                    flag = true
+                                }
+                            }
+                            R.drawable.luna -> {
+                                if (grados[figura] == 0F || grados[figura]==360F){
+                                    flag=true
+                                }
+                            }
+                            R.drawable.sol -> {
+                                if (grados[figura] ==  0F || grados[figura] == 36F || grados[figura] ==  72F || grados[figura] == 108F || grados[figura] == 144F || grados[figura] == 180F || grados[figura] == 180F || grados[figura] == 216F || grados[figura] == 252F || grados[figura] == 180F || grados[figura] == 288F || grados[figura] == 324F || grados[figura] == 360F ){
+                                    flag = true
+                                }
+                            }
+                            R.drawable.rombo -> {
+                                if (grados[figura] ==  0F || grados[figura] ==  180F || grados[figura] == 360F){
+                                    flag = true
+                                }
+                            }
+
+                        }
 
 
-                    checkFinal()
+                    if (flag) {
+                        flag = false
+                        imagenes[figura].visibility = View.INVISIBLE
+                        rotar[figura].visibility = View.INVISIBLE
+                        sombras[sombra].setColorFilter(Color.GREEN)
+
+
+                        checkFinal()
+                    }
                 }
             }
         }
