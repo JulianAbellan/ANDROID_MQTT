@@ -111,6 +111,7 @@ class MathsGame : AppCompatActivity() {
         }
 
         buttonOpA.setOnLongClickListener(object : View.OnLongClickListener {
+
             override fun onLongClick(v: View?): Boolean {
                 if(settings.getString("tts","NO").equals("SI")) texttospeech.speak(buttonOpA.text as String?, TextToSpeech.QUEUE_ADD, null);
                 return false
@@ -163,6 +164,7 @@ class MathsGame : AppCompatActivity() {
             contador.cancel()
             scorePuntos += 1
         } else {
+            contador.cancel()
             resumenText?.setText("${getString(R.string.incorrect)}")
         }
 
