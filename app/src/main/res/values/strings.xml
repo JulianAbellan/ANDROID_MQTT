@@ -68,6 +68,7 @@
     <string name="idiomaChange">OK! SETTING SPANISH!</string>
     <string name="visualChange">OK! TURNING VISUAL ASSISTANCE ON!</string>
     <string name="conf_name">configuration</string>
+    <string name="congrats">CONGRATULATIONS! YOU DID IT!</string>
 
 
 </resources>

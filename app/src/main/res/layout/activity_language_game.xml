@@ -5,8 +5,8 @@
     android:id="@+id/constrint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LanguageGame"
-    android:background="@drawable/fondomates">
+    android:background="@drawable/fondomates"
+    tools:context=".LanguageGame">
 
     <Button
         android:id="@+id/backButton3"
@@ -14,22 +14,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/backDer"
+        app:layout_constraintStart_toStartOf="@id/backIzq"
+        app:layout_constraintTop_toTopOf="@id/backArriba" />
 
     <Button
         android:id="@+id/grabarButton"
         android:layout_width="194dp"
         android:layout_height="187dp"
         android:background="@drawable/microfono"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911"
+        app:layout_constraintBottom_toBottomOf="@id/vozAbajo"
+        app:layout_constraintEnd_toEndOf="@id/vozDer"
+        app:layout_constraintStart_toStartOf="@id/vozIzq"
+        app:layout_constraintTop_toTopOf="@id/vozArriba"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -38,10 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="464dp"
         android:background="#ADEFED"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.585"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/microtextDer"
+        app:layout_constraintStart_toStartOf="@id/microtextIzq"
+        app:layout_constraintTop_toTopOf="@id/microtextArriba"
         tools:text="CLICK THE MICROPHONE TO START RECORDING!" />
 
     <TextView
@@ -50,35 +46,29 @@
         android:layout_height="wrap_content"
         android:background="#D6ADEF"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintBottom_toBottomOf="@id/levelAbajo"
+        app:layout_constraintEnd_toEndOf="@id/levelDer"
+        app:layout_constraintStart_toStartOf="@id/levelIzq"
+        app:layout_constraintTop_toTopOf="@id/levelArriba" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="167dp"
         android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461"
+        app:layout_constraintBottom_toBottomOf="@id/garbanceteAbajo"
+        app:layout_constraintEnd_toEndOf="@id/levelDer"
+        app:layout_constraintStart_toStartOf="@id/garbanceteIzq"
+        app:layout_constraintTop_toTopOf="@id/garbanceteArriba"
         app:srcCompat="@drawable/garbancete" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="212dp"
         android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"
+        app:layout_constraintBottom_toBottomOf="@id/bocadilloAbajo"
+        app:layout_constraintEnd_toEndOf="@id/bocadilloDer"
+        app:layout_constraintStart_toStartOf="@id/levelIzq"
+        app:layout_constraintTop_toTopOf="@id/bocadilloArriba"
         app:srcCompat="@drawable/bocadillo" />
 
     <TextView
@@ -87,11 +77,184 @@
         android:layout_height="114dp"
         android:gravity="center"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintBottom_toBottomOf="@id/mensajeAbajo"
+        app:layout_constraintEnd_toEndOf="@id/mensajeDer"
+        app:layout_constraintStart_toStartOf="@id/levelDer"
+        app:layout_constraintTop_toTopOf="@id/mensajeArriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="36dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/microtextIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="58dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbanceteIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="87dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vozIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="108dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="124dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/levelIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="186dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/levelDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="244dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vozDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="302dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/mensajeDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="357dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/microtextDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="370dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadilloDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="411dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/levelArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="122dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/levelAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="141dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadilloArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="163dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/mensajeArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="177dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/mensajeAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="291dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbanceteArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="245dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadilloAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="335dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbanceteAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="445dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/microtextArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="464dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/microtextAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="483dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vozArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="496dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vozAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="683dp" />
 
 </android.support.constraint.ConstraintLayout>

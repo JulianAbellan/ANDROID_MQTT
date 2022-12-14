@@ -68,5 +68,6 @@
     <string name="idiomaChange">¡ENTENDIDO!¡PONIENDO INGLÉS!</string>
     <string name="visualChange">¡ENTENDIDO!¡ACTIVANDO ASISTENTE VISUAL!</string>
     <string name="conf_name">configuración</string>
+    <string name="congrats">¡ENHORABUENA!¡LO CONSEGUISTE!</string>
 
 </resources>

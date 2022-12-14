@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/constraintLayout"
     tools:context=".GeometryGame">
 
     <Button
@@ -13,10 +14,8 @@
         android:background="@drawable/rotar"
         app:layout_constraintBottom_toBottomOf="@id/rotarAbajo"
         app:layout_constraintEnd_toEndOf="@id/rotar1Der"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/figura1izq"
-        app:layout_constraintTop_toTopOf="@id/rotarArriba"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintTop_toTopOf="@id/rotarArriba" />
 
     <Button
         android:id="@+id/rotar2"
@@ -25,10 +24,8 @@
         android:background="@drawable/rotar"
         app:layout_constraintBottom_toBottomOf="@id/rotarAbajo"
         app:layout_constraintEnd_toEndOf="@id/rotar2Der"
-        app:layout_constraintHorizontal_bias="0.299"
         app:layout_constraintStart_toStartOf="@id/backDer"
-        app:layout_constraintTop_toTopOf="@id/rotarArriba"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintTop_toTopOf="@id/rotarArriba"/>
 
     <ImageView
         android:id="@+id/sombra2"
@@ -36,10 +33,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/sombraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura2der"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="@id/figura1der"
         app:layout_constraintTop_toTopOf="@id/sombraArriba"
-        app:layout_constraintVertical_bias="0.833"
         app:srcCompat="@android:drawable/btn_star" />
 
     <ImageView
@@ -48,10 +43,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/sombraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura3der"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/figura2der"
         app:layout_constraintTop_toTopOf="@id/sombraArriba"
-        app:layout_constraintVertical_bias="0.833"
         app:srcCompat="@android:drawable/btn_star" />
 
     <ImageView
@@ -60,10 +53,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/sombraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura1der"
-        app:layout_constraintHorizontal_bias="0.007"
         app:layout_constraintStart_toStartOf="@id/figura1izq"
         app:layout_constraintTop_toTopOf="@id/sombraArriba"
-        app:layout_constraintVertical_bias="0.833"
         app:srcCompat="@android:drawable/btn_star" />
 
     <ImageView
@@ -72,10 +63,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/figuraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura2der"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@id/figura1der"
         app:layout_constraintTop_toTopOf="@id/figuraArriba"
-        app:layout_constraintVertical_bias="0.231"
         app:srcCompat="@android:drawable/btn_star" />
 
     <ImageView
@@ -84,10 +73,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/figuraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura3der"
-        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="@id/figura2der"
         app:layout_constraintTop_toTopOf="@id/figuraArriba"
-        app:layout_constraintVertical_bias="0.231"
         app:srcCompat="@android:drawable/btn_star" />
 
     <ImageView
@@ -96,10 +83,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/figuraAbajo"
         app:layout_constraintEnd_toEndOf="@id/figura1der"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/figura1izq"
         app:layout_constraintTop_toTopOf="@id/figuraArriba"
-        app:layout_constraintVertical_bias="0.231"
         app:srcCompat="@android:drawable/btn_star" />
 
     <Button
@@ -109,10 +94,8 @@
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="@id/backAbajo"
         app:layout_constraintEnd_toEndOf="@id/backDer"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="@id/backIzq"
-        app:layout_constraintTop_toTopOf="@id/backArriba"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toTopOf="@id/backArriba"/>
 
     <TextView
         android:id="@+id/levelGeo"
@@ -121,10 +104,8 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@id/backAbajo"
         app:layout_constraintEnd_toEndOf="@id/levelDer"
-        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="@id/levelIzq"
-        app:layout_constraintTop_toTopOf="@id/levelArriba"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintTop_toTopOf="@id/levelArriba"/>
 
     <ImageView
         android:id="@+id/imageView11"
@@ -132,10 +113,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/garbanceteAbajo"
         app:layout_constraintEnd_toEndOf="@id/garbanceteDer"
-        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="@id/rotar1Der"
         app:layout_constraintTop_toTopOf="@id/garbanceteArriba"
-        app:layout_constraintVertical_bias="0.548"
         app:srcCompat="@drawable/garbancete" />
 
     <ImageView
@@ -144,10 +123,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/bocadilloAbajo"
         app:layout_constraintEnd_toEndOf="@id/bocadilloDer"
-        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="@id/bocadillaIzq"
         app:layout_constraintTop_toTopOf="@id/bocadilloArriba"
-        app:layout_constraintVertical_bias="0.46"
         app:srcCompat="@drawable/bocadillo" />
 
     <TextView
@@ -158,22 +135,18 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12"
-        app:layout_constraintVertical_bias="0.425" />
+        app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
     <Button
         android:id="@+id/rotar3"
-        android:layout_width="64dp"
-        android:layout_height="45dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/rotar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.723"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintBottom_toBottomOf="@id/rotarAbajo"
+        app:layout_constraintEnd_toEndOf="@id/levelIzq"
+        app:layout_constraintStart_toStartOf="@id/rotar3Izq"
+        app:layout_constraintTop_toTopOf="@id/rotarArriba"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/figura1izq"
@@ -187,202 +160,202 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="139dp" />
+        app:layout_constraintGuide_percent="0.33" />
 
     <android.support.constraint.Guideline
         android:id="@+id/figura2der"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="280dp" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <android.support.constraint.Guideline
         android:id="@+id/figura3der"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="411dp" />
+        app:layout_constraintGuide_percent="0.98" />
 
     <android.support.constraint.Guideline
         android:id="@+id/sombraAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="628dp" />
+        app:layout_constraintGuide_percent="0.84" />
 
     <android.support.constraint.Guideline
         android:id="@+id/sombraArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="516dp" />
+        app:layout_constraintGuide_percent="0.69" />
 
     <android.support.constraint.Guideline
         android:id="@+id/figuraAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="255dp" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <android.support.constraint.Guideline
         android:id="@+id/figuraArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="143dp" />
+        app:layout_constraintGuide_percent="0.19" />
 
     <android.support.constraint.Guideline
         android:id="@+id/rotarArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="115dp" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <android.support.constraint.Guideline
         android:id="@+id/rotarAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="160dp" />
+        app:layout_constraintGuide_percent="0.21" />
 
     <android.support.constraint.Guideline
         android:id="@+id/backArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="35dp" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <android.support.constraint.Guideline
         android:id="@+id/backAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="83dp" />
+        app:layout_constraintGuide_percent="0.11" />
 
     <android.support.constraint.Guideline
         android:id="@+id/levelArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="63dp" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <android.support.constraint.Guideline
         android:id="@+id/garbanceteAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="484dp" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <android.support.constraint.Guideline
         android:id="@+id/garbanceteArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="300dp" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bocadilloAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="423dp" />
+        app:layout_constraintGuide_percent="0.56" />
 
     <android.support.constraint.Guideline
         android:id="@+id/outputAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="373dp" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bocadilloArriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="263dp" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <android.support.constraint.Guideline
         android:id="@+id/backIzq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <android.support.constraint.Guideline
         android:id="@+id/backDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="104dp" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <android.support.constraint.Guideline
         android:id="@+id/garbanceteDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="239dp" />
+        app:layout_constraintGuide_percent="0.57" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bocadillaIzq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="220dp" />
+        app:layout_constraintGuide_percent="0.52" />
 
     <android.support.constraint.Guideline
         android:id="@+id/outputIzq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="256dp" />
+        app:layout_constraintGuide_percent="0.61" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bocadilloDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="383dp" />
+        app:layout_constraintGuide_percent="0.91" />
 
     <android.support.constraint.Guideline
         android:id="@+id/outputDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="346dp" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <android.support.constraint.Guideline
         android:id="@+id/levelIzq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="315dp" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <android.support.constraint.Guideline
         android:id="@+id/levelDer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="373dp" />
+        app:layout_constraintGuide_percent="0.89" />
 
     <android.support.constraint.Guideline
         android:id="@+id/rotar1Der"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="64dp" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <android.support.constraint.Guideline
         android:id="@+id/rotar2Der"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="168dp" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <android.support.constraint.Guideline
         android:id="@+id/rotar3Izq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="251dp" />
+        app:layout_constraintGuide_percent="0.6" />
 
 </android.support.constraint.ConstraintLayout>

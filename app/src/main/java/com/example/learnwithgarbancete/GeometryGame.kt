@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.support.constraint.ConstraintLayout
+import android.support.constraint.ConstraintSet
 import android.support.v7.app.AppCompatActivity
 import android.view.MotionEvent
 import android.view.View
@@ -49,6 +51,7 @@ class GeometryGame : AppCompatActivity(){
     var grados = arrayOf(grados1, grados2, grados3)
     var flag = false
     lateinit var random : Random
+    lateinit var constraintLayout : ConstraintLayout
 
 
 
@@ -205,8 +208,30 @@ class GeometryGame : AppCompatActivity(){
             startActivity(intent)
         }
 
-       rutina()
+        constraintLayout = findViewById(R.id.constraintLayout)
+        inicializar()
+        rutina()
 
+    }
+
+    fun inicializar(){
+        var cs = ConstraintSet()
+        cs.clone(constraintLayout)
+        cs.connect(R.id.figura1, ConstraintSet.RIGHT, R.id.figura1der, ConstraintSet.RIGHT, 0 )
+        cs.connect(R.id.figura1, ConstraintSet.LEFT, R.id.figura1izq, ConstraintSet.LEFT, 0 )
+        //cs.connect(R.id.figura1, ConstraintSet.TOP, R.id.figuraArriba, ConstraintSet.TOP, 0 )
+        cs.connect(R.id.figura1, ConstraintSet.BOTTOM, R.id.figuraAbajo, ConstraintSet.BOTTOM, 0 )
+
+        cs.connect(R.id.figura2, ConstraintSet.RIGHT, R.id.figura2der, ConstraintSet.RIGHT, 0 )
+        cs.connect(R.id.figura2, ConstraintSet.LEFT, R.id.figura1der, ConstraintSet.LEFT, 0 )
+       // cs.connect(R.id.figura2, ConstraintSet.TOP, R.id.figuraArriba, ConstraintSet.TOP, 0 )
+        cs.connect(R.id.figura2, ConstraintSet.BOTTOM, R.id.figuraAbajo, ConstraintSet.BOTTOM, 0 )
+
+        cs.connect(R.id.figura3, ConstraintSet.RIGHT, R.id.figura3der, ConstraintSet.RIGHT, 0 )
+        cs.connect(R.id.figura3, ConstraintSet.LEFT, R.id.figura2der, ConstraintSet.LEFT, 0 )
+       // cs.connect(R.id.figura3, ConstraintSet.TOP, R.id.figuraArriba, ConstraintSet.TOP, 0 )
+        cs.connect(R.id.figura3, ConstraintSet.BOTTOM, R.id.figuraAbajo, ConstraintSet.BOTTOM, 0 )
+        cs.applyTo(constraintLayout)
     }
 
     fun rutina(){
@@ -216,6 +241,7 @@ class GeometryGame : AppCompatActivity(){
             outputGeo.setText(getString(R.string.empiezaGeo))
         }
         i++
+        inicializar()
         terminar()
         ponerNivel(i)
         ponerFiguras()
@@ -230,6 +256,7 @@ class GeometryGame : AppCompatActivity(){
             sombra2.isEnabled = false
             sombra3.isEnabled = false
 
+            outputGeo.setText(getString(R.string.congrats))
         }
     }
     fun ponerNivel(i:Int){
@@ -250,25 +277,11 @@ class GeometryGame : AppCompatActivity(){
         rotar2.visibility = View.VISIBLE
         rotar3.visibility = View.VISIBLE
 
+        /*
         figura1.rotation = random.nextInt(360) + 0.0F
         figura2.rotation = random.nextInt(360) + 0.0F
         figura3.rotation = random.nextInt(360) + 0.0F
-
-
-        if (i!=1) {
-            figura1.x = initial_x[0]
-            figura2.x = initial_x[1]
-            figura3.x = initial_x[2]
-            figura1.y = initial_y[0]
-            figura2.y = initial_y[1]
-            figura3.y = initial_y[2]
-            rotar1.x = initial_x[0]
-            rotar2.x = initial_x[1]
-            rotar3.x = initial_x[2]
-            rotar1.y = initial_y[0]
-            rotar2.y = initial_y[1]
-            rotar3.y = initial_y[2]
-        }
+        */
 
         sombra1.setImageResource(df[0])
         sombra2.setImageResource(df[1])
