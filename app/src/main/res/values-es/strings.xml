@@ -58,5 +58,19 @@
     <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
     <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
     <string name="timeout">¡VAYA!¡SE HA ACABADO EL TIEMPO!</string>
+    <string name="pizza">Pizza</string>
+
+    <string name="hamburguesa">Hamburguesa</string>
+    <string name="zanahoria">Zanahoria</string>
+    <string name="lechuga">Lechuga</string>
+    <string name="manzana">Manzana</string>
+    <string name="vuelveaintentarlo">Te has equivocado!!, clica en mi otra vez y vuelve a intentarlo</string>
+    <string name="felicidades">Felicidades!</string>
+    <string name="buentrabajosiguiente">Buen trabajo! Clica en mi para el siguiente</string>
+    <string name="holahealthy">Hola! Gira el movil para un lado u otro si el alimento es saludable o no</string>
+    <string name="score">Puntuación:</string>
+    <string name="titulohealthy">¿SALUDABLE O NO?</string>
+
+
 
 </resources>
