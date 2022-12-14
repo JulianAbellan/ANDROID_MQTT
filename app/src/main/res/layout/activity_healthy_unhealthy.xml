@@ -330,6 +330,8 @@
         android:textAlignment="center"
         app:autoSizeTextType="uniform"
         android:textStyle="bold"
+        android:gravity = "center"
+
         app:layout_constraintBottom_toBottomOf="@id/textobocadillohealthyabajo"
         app:layout_constraintEnd_toEndOf="@id/textobocadillohealthyderecha"
         app:layout_constraintStart_toStartOf="@id/textobocadillohealthyizquierda"
