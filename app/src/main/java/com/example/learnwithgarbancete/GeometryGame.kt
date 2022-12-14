@@ -277,11 +277,20 @@ class GeometryGame : AppCompatActivity(){
         rotar2.visibility = View.VISIBLE
         rotar3.visibility = View.VISIBLE
 
-        /*
+
         figura1.rotation = random.nextInt(360) + 0.0F
         figura2.rotation = random.nextInt(360) + 0.0F
         figura3.rotation = random.nextInt(360) + 0.0F
-        */
+
+
+        if (i!=1) {
+            figura1.y = initial_y[0]
+            figura2.y = initial_y[1]
+            figura3.y = initial_y[2]
+            rotar1.y = initial_y[0]
+            rotar2.y = initial_y[1]
+            rotar3.y = initial_y[2]
+        }
 
         sombra1.setImageResource(df[0])
         sombra2.setImageResource(df[1])
