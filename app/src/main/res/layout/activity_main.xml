@@ -66,7 +66,7 @@
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/health_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="20sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
         app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
@@ -109,7 +109,7 @@
         android:fontFamily="@font/crafty_girls"
         android:text="@string/maths_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
         app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
@@ -138,7 +138,7 @@
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/language_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
         app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
@@ -169,7 +169,7 @@
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/geometry_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
         app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
@@ -227,7 +227,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.68" />
 
 
 
