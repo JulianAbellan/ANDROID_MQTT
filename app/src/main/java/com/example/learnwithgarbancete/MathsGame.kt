@@ -179,8 +179,9 @@ class MathsGame : AppCompatActivity() {
     fun ponerNivel(){
         nivelText?.setText("${getString(R.string.level_name)}: ${i}/5")
 
-        if(i == 5){
+        if(i >= 5){
             resumen()
+            contador.cancel()
         }
     }
 
@@ -215,9 +216,9 @@ class MathsGame : AppCompatActivity() {
         contador = object : CountDownTimer(tiempoMilisegundos.toLong(),1000){
             override fun onFinish() {
                 txtTiempo.setText("FINISH")
-                resumenText?.text = getString(R.string.timeout)
+                if (i <= 5) resumenText?.text = getString(R.string.timeout)
                 Thread.sleep(2000)
-                rutina()
+                if (i <= 5) rutina()
             }
 
             override fun onTick(millisUntilFinished: Long) {
