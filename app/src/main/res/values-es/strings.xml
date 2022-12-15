@@ -7,7 +7,7 @@
     <string name="geometry_name">GEOMETRÍA</string>
     <string name="language_name">INGLÉS</string>
     <string name="science_name">CIENCIA</string>
-    <string name="playwithme">¡DIME LO QUE NECESITAS!</string>
+    <string name="playwithme">¡JUEGA CONMIGO!</string>
     <string name="score_name">Puntos</string>
     <string name="level_name">Nivel</string>
     <string name="points">PUNTOS!</string>
@@ -58,6 +58,20 @@
     <string name="activaColorDeuteronomalia">Has activado el modo daltónico Deuteronomalia</string>
     <string name="activaColorTritanomalia">Has activado el modo daltónico Tritanomalia</string>
     <string name="timeout">¡VAYA!¡SE HA ACABADO EL TIEMPO!</string>
+    <string name="pizza">Pizza</string>
+
+    <string name="hamburguesa">Hamburguesa</string>
+    <string name="zanahoria">Zanahoria</string>
+    <string name="lechuga">Lechuga</string>
+    <string name="manzana">Manzana</string>
+    <string name="vuelveaintentarlo">Te has equivocado!!, clica en mi otra vez y vuelve a intentarlo</string>
+    <string name="felicidades">Felicidades!</string>
+    <string name="buentrabajosiguiente">Buen trabajo! Clica en mi para el siguiente</string>
+    <string name="holahealthy">Hola! Gira el movil para un lado u otro si el alimento es saludable o no</string>
+    <string name="score">Puntuación:</string>
+    <string name="titulohealthy">¿SALUDABLE O NO?</string>
+
+
     <string name="empiezaGeo">SELECCIONA UNA FIGURA Y ARRÁSTRALA HASTA SU SILUETA</string>
     <string name="confGeo">¡MUY BIEN!</string>
     <string name="mathsVoz">¡ENTENDIDO!¡ABRIENDO EL JUEGO DE MATES!</string>

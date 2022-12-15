@@ -11,188 +11,345 @@
         android:id="@+id/fondo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fondo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/fondomainderecha"
+        app:layout_constraintBottom_toBottomOf="@id/fondomainabajo"
+        app:layout_constraintStart_toStartOf="@id/fondomainizquierda"
+        app:layout_constraintTop_toTopOf="@id/fondomainarriba"
+        app:srcCompat="@drawable/carteltextotitulo" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondomainizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondomainderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondomainarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondomainabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
 
     <Button
         android:id="@+id/health"
-        android:layout_width="155dp"
-        android:layout_height="119dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/health_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
+        app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
+        app:layout_constraintStart_toStartOf="@id/nubehealthizquierda"
+        app:layout_constraintTop_toTopOf="@id/nubehealtharriba"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="524dp"
-        android:layout_height="440dp"
-        android:layout_marginBottom="468dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/carteltextotitulo" />
+    <android.support.constraint.Guideline
+        android:id="@+id/nubehealthizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubehealthderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.965" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubehealtharriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.255" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubehealthabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
 
     <Button
         android:id="@+id/mathsButton"
-        android:layout_width="147dp"
-        android:layout_height="117dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls"
         android:text="@string/maths_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
 
-    <Button
-        android:id="@+id/science"
-        android:layout_width="156dp"
-        android:layout_height="113dp"
-        android:background="@drawable/nubessinfondo"
-        android:fontFamily="@font/crafty_girls2"
-        android:text="@string/science_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
+        app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
+        app:layout_constraintStart_toStartOf="@id/nubemathizquierda"
+        app:layout_constraintTop_toTopOf="@id/nubehealtharriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubemathizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubemathderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
 
     <Button
         android:id="@+id/languageButton"
-        android:layout_width="156dp"
-        android:layout_height="113dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/language_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
+        app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
+        app:layout_constraintStart_toStartOf="@id/nubehealthizquierda"
+        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubelanguagearriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nubelanguageabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.625" />
+
+
 
     <Button
         android:id="@+id/geometry"
-        android:layout_width="170dp"
-        android:layout_height="113dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
         android:fontFamily="@font/crafty_girls2"
         android:text="@string/geometry_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
+        app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
+        app:layout_constraintStart_toStartOf="@id/nubemathizquierda"
+        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba"/>
 
     <Button
         android:id="@+id/info"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@id/configurationabajo"
+        app:layout_constraintEnd_toEndOf="@id/fondomainderecha"
+        app:layout_constraintStart_toStartOf="@id/infoizquierda"
+        app:layout_constraintTop_toTopOf="@id/configurationarriba"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/infoizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+
 
     <Button
         android:id="@+id/garbancete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/garbancete"
+        app:layout_constraintBottom_toBottomOf="@id/configurationabajo"
+        app:layout_constraintEnd_toEndOf="@id/garbancetederecha"
+        app:layout_constraintStart_toStartOf="@id/garbanceteizquierda"
+        app:layout_constraintTop_toTopOf="@id/garbancetearriba"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbanceteizquierda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/garbancete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-    <!--
-    <ImageView
-        android:id="@+id/bubble"
-        android:layout_width="165dp"
-        android:layout_height="115dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834"
-        app:srcCompat="@drawable/bocadillo" />-->
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetederecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.665" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetearriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
 
 
 
     <Button
         android:id="@+id/configuration"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/config"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@id/configurationabajo"
+        app:layout_constraintEnd_toEndOf="@id/configurationderecha"
+        app:layout_constraintStart_toStartOf="@id/configurationizquierda"
+        app:layout_constraintTop_toTopOf="@id/configurationarriba"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/configurationizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/configurationderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/configurationarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/configurationabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="154dp"
-        android:layout_height="135dp"
-        android:layout_marginBottom="92dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bocadillomainabajo"
+        app:layout_constraintEnd_toEndOf="@id/bocadillomainderecha"
+        app:layout_constraintStart_toStartOf="@id/bocadillomainizquierda"
+        app:layout_constraintTop_toTopOf="@id/bocadillomainarriba"
         app:srcCompat="@drawable/bocadillo" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillomainizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillomainderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillomainarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillomainabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.888" />
 
     <TextView
         android:id="@+id/playwithme"
-        android:layout_width="109dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
         android:text="@string/playwithme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        app:layout_constraintBottom_toBottomOf="@id/textobocadilloabajo"
+        app:layout_constraintEnd_toEndOf="@id/textobocadilloderecha"
+        app:layout_constraintStart_toStartOf="@id/textobocadilloizquierda"
+        app:layout_constraintTop_toTopOf="@id/textobocadilloarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadilloizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadilloderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadilloarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadilloabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
 
 
 </android.support.constraint.ConstraintLayout>

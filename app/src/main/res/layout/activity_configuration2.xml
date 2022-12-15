@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/segundofondo"
     tools:context=".ConfigurationActivity">
 
 
@@ -12,208 +11,490 @@
         android:id="@+id/fondo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fondoDerecha"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/fondoIzquierda"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/segundofondo" />
 
     <TextView
         android:id="@+id/blindnessMode"
-        android:layout_width="182dp"
-        android:layout_height="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/blindassitantmode"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/visualAbajo"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+        app:layout_constraintTop_toTopOf="@id/VisualArriba" />
 
     <Button
         android:id="@+id/leftDaltMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/blindmode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesIzqDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesAbajoArriba"
         app:layout_constraintVertical_bias="0.422" />
 
     <TextView
         android:id="@+id/blindnessMode4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
         android:text="@string/colourblindmode"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
-
-    <TextView
-        android:id="@+id/changeLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/changelanguage"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
-
-    <Button
-        android:id="@+id/rightDaltMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/blindmode"
-        android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
-
-    <Button
-        android:id="@+id/rightLanguageMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/blindmode"
-        android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
-
-    <Button
-        android:id="@+id/leftLanguageMode"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/blindmode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
-
-    <Switch
-        android:id="@+id/switchVisual"
-        android:layout_width="61dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoArriba"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+        app:layout_constraintTop_toTopOf="@id/colourArriba" />
 
     <TextView
         android:id="@+id/colorBlindnessMode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/seleccionartextocolourarriba"
+        app:layout_constraintEnd_toEndOf="@id/seleccionartextosderecha"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/seleccionartextosizquierda"
+        app:layout_constraintTop_toTopOf="@id/seleccionartextocolourabajo"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/changeLanguage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/changelanguage"
+        android:textAlignment="center"
+
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaArriba"
+        app:layout_constraintEnd_toEndOf="@id/TextosDerecha"
+        app:layout_constraintStart_toStartOf="@id/TextosIzquierda"
+        app:layout_constraintTop_toTopOf="@id/languageArriba" />
+
+    <Button
+        android:id="@+id/rightDaltMode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blindmode"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="@id/botonesAbajoAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesDerIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesAbajoArriba"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <Button
+        android:id="@+id/rightLanguageMode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blindmode"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesDerIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesArribaArriba"
+        app:layout_constraintVertical_bias="0.27" />
+
+    <Button
+        android:id="@+id/leftLanguageMode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blindmode"
+        app:layout_constraintBottom_toBottomOf="@id/botonesArribaAbajo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/botonesIzqDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/botonesArribaArriba" />
+
+    <Switch
+        android:id="@+id/switchVisual"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433" />
+        app:layout_constraintBottom_toBottomOf="@id/SwitchAbajo"
+        app:layout_constraintEnd_toEndOf="@id/SwitchDer"
+        app:layout_constraintStart_toStartOf="@id/SwitchIzq"
+        app:layout_constraintTop_toTopOf="@id/visualAbajo" />
+
 
     <TextView
         android:id="@+id/languageSelect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
+
+        app:layout_constraintBottom_toBottomOf="@id/seleccionartextolanguageabajo"
+        app:layout_constraintEnd_toEndOf="@id/seleccionartextosderecha"
+        app:layout_constraintStart_toStartOf="@id/seleccionartextosizquierda"
+        app:layout_constraintTop_toTopOf="@id/seleccionartextolanguagearriba"/>
 
     <Button
         android:id="@+id/RestoreDefaultSettingsBtn"
-        android:layout_width="262dp"
-        android:layout_height="38dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/defaultvalues"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:autoSizeTextType="uniform"
+
+        app:layout_constraintBottom_toBottomOf="@id/RestoreAbajo"
+        app:layout_constraintEnd_toEndOf="@id/botonesDerDer"
+        app:layout_constraintStart_toStartOf="@id/botonesIzqIzq"
+        app:layout_constraintTop_toTopOf="@id/RestoreArriba" />
 
     <Button
         android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/VisualArriba"
+        app:layout_constraintEnd_toEndOf="@id/botonesIzqIzq"
+        app:layout_constraintStart_toStartOf="@id/BackIzquierda"
+        app:layout_constraintTop_toTopOf="@id/BackArriba" />
 
     <ImageView
         android:id="@+id/garbanConf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.286"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/GarbanceteAbajo"
+        app:layout_constraintEnd_toEndOf="@id/GarbanceteDerecha"
+        app:layout_constraintStart_toStartOf="@id/GarbanceteIzquierda"
+        app:layout_constraintTop_toTopOf="@id/GarbanceteArriba"
         app:srcCompat="@drawable/garbancete" />
-    <!--
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="248dp"
-            android:layout_height="154dp"
-            android:layout_marginStart="172dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.727"
-            app:srcCompat="@drawable/bocadillo" />-->
+
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="197dp"
-        android:layout_height="194dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/BocadilloAbajo"
+        app:layout_constraintEnd_toEndOf="@id/BocadilloDerecha"
+        app:layout_constraintStart_toStartOf="@id/BocadilloIzquierda"
+        app:layout_constraintTop_toTopOf="@id/BocadilloArriba"
         app:layout_constraintVertical_bias="0.756"
         app:srcCompat="@drawable/bocadillo" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="117dp"
-        android:layout_height="75dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/ayuda"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.799"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:autoSizeTextType="uniform"
+
+        app:layout_constraintBottom_toBottomOf="@+id/textogarbanceteabajo"
+        app:layout_constraintEnd_toEndOf="@+id/textogarbancetederecha"
+        app:layout_constraintStart_toStartOf="@+id/textogarbanceteizquierda"
+        app:layout_constraintTop_toTopOf="@+id/textogarbancetearrriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesIzqIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesIzqDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.315" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesDerIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.679" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesDerDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.794" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesArribaArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.251" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesArribaAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.317" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesAbajoArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.393" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/botonesAbajoAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.461" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/RestoreAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/RestoreArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.481" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondoIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fondoDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/TextosDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.743" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/TextosIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.255" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/colourArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/languageArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.205" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/GarbanceteIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/GarbanceteDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/GarbanceteArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/GarbanceteAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BocadilloIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BocadilloDerecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BocadilloArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.555" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BocadilloAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/VisualArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.089" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/visualAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.135" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BackArriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/BackIzquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/SwitchAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/SwitchIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/SwitchDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.57" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextosizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextosderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextocolourabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.405" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextocolourarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextolanguageabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.305" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/seleccionartextolanguagearriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.265" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textogarbanceteizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textogarbancetederecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textogarbanceteabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textogarbancetearrriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.629" />
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>
-

@@ -4,150 +4,407 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondomates"
     tools:context=".HealthyUnhealthy">
 
     <Button
         android:id="@+id/backButton3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/back"
+        app:autoSizeTextType="uniform"
+
+        app:layout_constraintBottom_toBottomOf="@id/titulohealthyarriba"
+        app:layout_constraintEnd_toEndOf="@id/backhealthyderecha"
+        app:layout_constraintStart_toStartOf="@id/backhealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/backhealthyyarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backhealthyizquierda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backhealthyderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/backhealthyyarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
+
+
 
     <TextView
         android:id="@+id/HealthyText"
-        android:layout_width="328dp"
-        android:layout_height="131dp"
-        android:text="HEALTHY OR UNHEALTHY?"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/titulohealthy"
         android:textAlignment="center"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/titulohealthyabajo"
+        app:layout_constraintEnd_toEndOf="@id/titulohealthyderecha"
+        app:layout_constraintStart_toStartOf="@id/titulohealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/titulohealthyarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titulohealthyizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titulohealthyderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titulohealthyarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/titulohealthyabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
 
     <TextView
         android:id="@+id/Score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/score"
+        android:textAlignment="viewEnd"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/scoreabajo"
+        app:layout_constraintEnd_toEndOf="@id/scorederecha"
+        app:layout_constraintStart_toStartOf="@id/titulohealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/titulohealthyabajo" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/scorederecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score: "
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/scoreabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.295" />
 
     <TextView
         android:id="@+id/NumberScore"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="0"
+        app:autoSizeTextType="uniform"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/scoreabajo"
+        app:layout_constraintEnd_toEndOf="@id/scorenumeroderecha"
+        app:layout_constraintStart_toStartOf="@id/scorenumeroizquierda"
+        app:layout_constraintTop_toTopOf="@id/titulohealthyabajo" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/scorenumeroderecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/scorenumeroizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.67" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="342dp"
-        android:layout_height="187dp"
-        android:rotation="-21"
-        android:rotationY="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463"
-        app:srcCompat="@drawable/carrot" />
-
-    <ImageView
-        android:id="@+id/flechaverde"
-        android:layout_width="135dp"
-        android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478"
-        app:srcCompat="@drawable/flechaverde" />
 
     <ImageView
         android:id="@+id/flecharoja"
-        android:layout_width="135dp"
-        android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/flecharojaabajo"
+        app:layout_constraintEnd_toEndOf="@id/flecharojaderecha"
+        app:layout_constraintStart_toStartOf="@id/backhealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/flecharojaarriba"
         app:srcCompat="@drawable/flecharoja" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/flecharojaderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/flecharojaarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/flecharojaabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+
+    <ImageView
+        android:id="@+id/flechaverde"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/flecharojaabajo"
+        app:layout_constraintEnd_toEndOf="@id/flechaverdederecha"
+        app:layout_constraintStart_toStartOf="@id/scorederecha"
+        app:layout_constraintTop_toTopOf="@id/flecharojaarriba"
+        app:srcCompat="@drawable/flechaverde" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/flechaverdederecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
+
 
     <TextView
         android:id="@+id/UnhealthyLeft"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="UNHEALTHY"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/unhealtytextabajo"
+        app:layout_constraintEnd_toEndOf="@id/flecharojaderecha"
+        app:layout_constraintStart_toStartOf="@id/unhealtytextizquierda"
+        app:layout_constraintTop_toTopOf="@id/unhealtytextarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/unhealtytextarriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UNHEALTHY"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.348" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/unhealtytextabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.381" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/unhealtytextizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.055" />
 
     <TextView
         android:id="@+id/healthyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HEALTHY"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="HEALTHY"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/unhealtytextabajo"
+        app:layout_constraintEnd_toEndOf="@id/titulohealthyderecha"
+        app:layout_constraintStart_toStartOf="@id/scorenumeroizquierda"
+        app:layout_constraintTop_toTopOf="@id/unhealtytextarriba" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:rotation="-21"
+        android:rotationY="4"
+        app:layout_constraintBottom_toBottomOf="@id/foodabajo"
+        app:layout_constraintEnd_toEndOf="@id/scorederecha"
+        app:layout_constraintStart_toStartOf="@id/flecharojaderecha"
+        app:layout_constraintTop_toTopOf="@id/foodarriba"
+        app:srcCompat="@drawable/zanahoria" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/foodarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.445" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/foodabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.622" />
 
     <TextView
         android:id="@+id/FoodDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Carrot"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/fooddescriptionabajo"
+        app:layout_constraintEnd_toEndOf="@id/scorederecha"
+        app:layout_constraintStart_toStartOf="@id/flecharojaderecha"
+        app:layout_constraintTop_toTopOf="@id/fooddescriptionarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fooddescriptionarriba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Carrot"
-        android:textSize="20sp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/fooddescriptionabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.665" />
+
+
+    <ImageView
+        android:id="@+id/bocadillo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bocadillohealthyabajo"
+        app:layout_constraintEnd_toEndOf="@id/flechaverdederecha"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/bocadillohealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/bocadillohealthyarriba"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bocadillo" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillohealthyizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillohealthyarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bocadillohealthyabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
+
+
+    <TextView
+        android:id="@+id/textGarbancete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/holahealthy"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        android:gravity = "center"
+
+        app:layout_constraintBottom_toBottomOf="@id/textobocadillohealthyabajo"
+        app:layout_constraintEnd_toEndOf="@id/textobocadillohealthyderecha"
+        app:layout_constraintStart_toStartOf="@id/textobocadillohealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/textobocadillohealthyarriba" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadillohealthyizquierda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadillohealthyarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadillohealthyabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textobocadillohealthyderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
 
     <Button
         android:id="@+id/garbancete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/garbancete"
+        app:layout_constraintBottom_toBottomOf="@id/garbancetehealthyabajo"
+        app:layout_constraintEnd_toEndOf="@id/garbancetehealthyderecha"
+        app:layout_constraintStart_toStartOf="@id/garbancetehealthyizquierda"
+        app:layout_constraintTop_toTopOf="@id/garbancetehealthyarriba"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetehealthyizquierda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/garbancete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetehealthyderecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetehealthyarriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/garbancetehealthyabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
