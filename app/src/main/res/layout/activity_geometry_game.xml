@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/constraintLayout"
     tools:context=".GeometryGame">
 
     <Button
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="@id/rotarAbajo"
         app:layout_constraintEnd_toEndOf="@id/rotar2Der"
         app:layout_constraintStart_toStartOf="@id/backDer"
-        app:layout_constraintTop_toTopOf="@id/rotarArriba"/>
+        app:layout_constraintTop_toTopOf="@id/rotarArriba" />
 
     <ImageView
         android:id="@+id/sombra2"
@@ -92,20 +92,24 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/back"
+        app:autoSizeTextType="uniform"
+
         app:layout_constraintBottom_toBottomOf="@id/backAbajo"
         app:layout_constraintEnd_toEndOf="@id/backDer"
         app:layout_constraintStart_toStartOf="@id/backIzq"
-        app:layout_constraintTop_toTopOf="@id/backArriba"/>
+        app:layout_constraintTop_toTopOf="@id/backArriba" />
 
     <TextView
         android:id="@+id/levelGeo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="TextView"
+        app:autoSizeTextType="uniform"
+
         app:layout_constraintBottom_toBottomOf="@id/backAbajo"
         app:layout_constraintEnd_toEndOf="@id/levelDer"
         app:layout_constraintStart_toStartOf="@id/levelIzq"
-        app:layout_constraintTop_toTopOf="@id/levelArriba"/>
+        app:layout_constraintTop_toTopOf="@id/levelArriba" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -132,11 +136,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
+        app:autoSizeTextType="uniform"
+
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+        app:layout_constraintBottom_toBottomOf="@id/textogarbancetegeometryabajo"
+        app:layout_constraintEnd_toEndOf="@id/outputDer"
+        app:layout_constraintStart_toStartOf="@id/outputIzq"
+        app:layout_constraintTop_toTopOf="@id/garbanceteArriba"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/textogarbancetegeometryabajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
 
     <Button
         android:id="@+id/rotar3"
@@ -146,7 +160,7 @@
         app:layout_constraintBottom_toBottomOf="@id/rotarAbajo"
         app:layout_constraintEnd_toEndOf="@id/levelIzq"
         app:layout_constraintStart_toStartOf="@id/rotar3Izq"
-        app:layout_constraintTop_toTopOf="@id/rotarArriba"/>
+        app:layout_constraintTop_toTopOf="@id/rotarArriba" />
 
     <android.support.constraint.Guideline
         android:id="@+id/figura1izq"
@@ -357,5 +371,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.6" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </android.support.constraint.ConstraintLayout>

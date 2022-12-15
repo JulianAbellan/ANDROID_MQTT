@@ -12,8 +12,11 @@
         android:id="@+id/backButton3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
         android:text="@string/back"
+        app:autoSizeTextType="uniform"
+
+        app:layout_constraintBottom_toBottomOf="@id/backAbajo"
+
         app:layout_constraintEnd_toEndOf="@id/backDer"
         app:layout_constraintStart_toStartOf="@id/backIzq"
         app:layout_constraintTop_toTopOf="@id/backArriba" />
@@ -46,6 +49,8 @@
         android:layout_height="0dp"
         android:background="#D6ADEF"
         android:text="TextView"
+        app:autoSizeTextType="uniform"
+
         app:layout_constraintBottom_toBottomOf="@id/levelAbajo"
         app:layout_constraintEnd_toEndOf="@id/levelDer"
         app:layout_constraintStart_toStartOf="@id/levelIzq"
@@ -76,6 +81,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
+        app:autoSizeTextType="uniform"
+
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@id/mensajeAbajo"
         app:layout_constraintEnd_toEndOf="@id/mensajeDer"
@@ -199,14 +206,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.236" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <android.support.constraint.Guideline
         android:id="@+id/mensajeAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.388" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <android.support.constraint.Guideline
         android:id="@+id/garbanceteArriba"
