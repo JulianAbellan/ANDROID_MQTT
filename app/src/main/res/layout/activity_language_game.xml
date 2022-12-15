@@ -12,8 +12,9 @@
         android:id="@+id/backButton3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
         android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="@id/backAbajo"
+
         app:layout_constraintEnd_toEndOf="@id/backDer"
         app:layout_constraintStart_toStartOf="@id/backIzq"
         app:layout_constraintTop_toTopOf="@id/backArriba" />
