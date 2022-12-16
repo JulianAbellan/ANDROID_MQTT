@@ -82,18 +82,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.24" />
 
-    <TextView
-        android:id="@+id/Score"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/score"
-        android:textAlignment="viewEnd"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toBottomOf="@id/scoreabajo"
-        app:layout_constraintEnd_toEndOf="@id/scorederecha"
-        app:layout_constraintStart_toStartOf="@id/titulohealthyizquierda"
-        app:layout_constraintTop_toTopOf="@id/titulohealthyabajo" />
-
     <android.support.constraint.Guideline
         android:id="@+id/scorederecha"
         android:layout_width="wrap_content"
@@ -107,18 +95,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.295" />
-
-    <TextView
-        android:id="@+id/NumberScore"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="0"
-        app:autoSizeTextType="uniform"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@id/scoreabajo"
-        app:layout_constraintEnd_toEndOf="@id/scorenumeroderecha"
-        app:layout_constraintStart_toStartOf="@id/scorenumeroizquierda"
-        app:layout_constraintTop_toTopOf="@id/titulohealthyabajo" />
 
     <android.support.constraint.Guideline
         android:id="@+id/scorenumeroderecha"

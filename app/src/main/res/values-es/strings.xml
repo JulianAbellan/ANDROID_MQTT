@@ -7,7 +7,6 @@
     <string name="geometry_name">GEOMETRÍA</string>
     <string name="language_name">INGLÉS</string>
     <string name="science_name">CIENCIA</string>
-    <string name="playwithme">¡JUEGA CONMIGO!</string>
     <string name="score_name">Puntos</string>
     <string name="level_name">Nivel</string>
     <string name="points">PUNTOS!</string>
@@ -82,6 +81,7 @@
     <string name="idiomaChange">¡ENTENDIDO!¡PONIENDO INGLÉS!</string>
     <string name="visualChange">¡ENTENDIDO!¡ACTIVANDO ASISTENTE VISUAL!</string>
     <string name="conf_name">configuración</string>
-    <string name="congrats">¡ENHORABUENA!¡LO CONSEGUISTE!</string>
+    <string name="congrats">¡ENHORABUENA! ¡LO CONSEGUISTE!</string>
+    <string name="playwithme">DIME LO QUE QUIERES QUE HAGA</string>
 
 </resources>

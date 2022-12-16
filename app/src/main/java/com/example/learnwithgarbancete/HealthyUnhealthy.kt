@@ -73,11 +73,9 @@ class HealthyUnhealthy : AppCompatActivity() {
         garbancete = findViewById(R.id.garbancete)
         fotocentro = findViewById(R.id.imageView)
         HealthyText = findViewById(R.id.FoodDescription)
-        NumberScore = findViewById(R.id.NumberScore)
         textGarbancete = findViewById(R.id.textGarbancete)
         titulo = findViewById(R.id.HealthyText)
 
-        score = findViewById(R.id.Score)
 
         inicioAplicacion()
 

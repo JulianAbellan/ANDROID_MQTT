@@ -49,11 +49,12 @@
         android:layout_height="0dp"
         android:background="#D6ADEF"
         android:text="TextView"
+        android:textAlignment="center"
         app:autoSizeTextType="uniform"
 
         app:layout_constraintBottom_toBottomOf="@id/levelAbajo"
         app:layout_constraintEnd_toEndOf="@id/levelDer"
-        app:layout_constraintStart_toStartOf="@id/levelIzq"
+        app:layout_constraintStart_toStartOf="@id/backDer"
         app:layout_constraintTop_toTopOf="@id/levelArriba" />
 
     <ImageView
@@ -185,14 +186,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.14" />
 
     <android.support.constraint.Guideline
         android:id="@+id/levelAbajo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.188" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <android.support.constraint.Guideline
         android:id="@+id/bocadilloArriba"
