@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.*
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.widget.*
 import java.util.*
 

@@ -11,6 +11,7 @@ import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -36,6 +37,9 @@ class HealthyUnhealthy : AppCompatActivity() {
     var manzana = R.drawable.manzana
     var zanahoria = R.drawable.zanahoria
     var count: Int = 0
+    var flag: Boolean = true
+    var mqttCliente: MQTTCliente = MQTTCliente()
+    var x = 0.0f
     lateinit var texttospeech: TextToSpeech
     lateinit var settings : SharedPreferences
     lateinit var tipodaltonico : String
@@ -80,6 +84,7 @@ class HealthyUnhealthy : AppCompatActivity() {
         inicioAplicacion()
 
         backButton2.setOnClickListener() {
+            flag=false
             val intent = Intent(this, MainActivity::class.java)
 
             if(settings.getString("tts","NO").equals("SI"))
@@ -91,7 +96,7 @@ class HealthyUnhealthy : AppCompatActivity() {
         sensorEventListener = object : SensorEventListener {
             override fun onAccuracyChanged(sensor: Sensor, i: Int) {}
             override fun onSensorChanged(sensorEvent: SensorEvent) {
-                val x = sensorEvent.values[0]
+                x = sensorEvent.values[0]
                 if (x < -5) {
                     onPause()
                     giroDerecha()
@@ -104,7 +109,23 @@ class HealthyUnhealthy : AppCompatActivity() {
         if (sensor == null) finish()
     }
 
+    fun hilos(){
+        Thread {
+            var i = 1
+            mqttCliente = MQTTCliente()
+            mqttCliente.connect(applicationContext)
+            while (flag) {
+                mqttCliente.publish("juego/salud", "Mensaje $i: ${x}")
+                Log.d("juego/salud", "Mensaje $i: ${x}")
+                Thread.sleep(5000)
+                i++
+            }
+        }.start()
+    }
+
     fun inicioAplicacion(){
+        Log.d("hola", "hola")
+        hilos()
         fotocentro.setImageResource(list[count])
         changeText(list[count])
 

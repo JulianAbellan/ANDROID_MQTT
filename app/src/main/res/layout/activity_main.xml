@@ -63,15 +63,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
-        android:fontFamily="@font/crafty_girls2"
+        android:fontFamily="@font/crafty_girls"
         android:text="@string/health_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="44sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
         app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
         app:layout_constraintStart_toStartOf="@id/nubehealthizquierda"
-        app:layout_constraintTop_toTopOf="@id/nubehealtharriba"/>
+        app:layout_constraintTop_toTopOf="@id/nubehealtharriba" />
 
     <android.support.constraint.Guideline
         android:id="@+id/nubehealthizquierda"
@@ -110,7 +110,7 @@
         android:text="@string/maths_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 
-        android:textSize="44sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubehealthabajo"
         app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
@@ -136,15 +136,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
-        android:fontFamily="@font/crafty_girls2"
+        android:fontFamily="@font/crafty_girls"
         android:text="@string/language_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="44sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
         app:layout_constraintEnd_toEndOf="@id/nubehealthderecha"
         app:layout_constraintStart_toStartOf="@id/nubehealthizquierda"
-        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba"/>
+        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba" />
 
     <android.support.constraint.Guideline
         android:id="@+id/nubelanguagearriba"
@@ -161,21 +161,20 @@
         app:layout_constraintGuide_percent="0.625" />
 
 
-
     <Button
         android:id="@+id/geometry"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/nubessinfondo"
-        android:fontFamily="@font/crafty_girls2"
+        android:fontFamily="@font/crafty_girls"
         android:text="@string/geometry_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="44sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/nubelanguageabajo"
         app:layout_constraintEnd_toEndOf="@id/nubemathderecha"
         app:layout_constraintStart_toStartOf="@id/nubemathizquierda"
-        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba"/>
+        app:layout_constraintTop_toTopOf="@id/nubelanguagearriba" />
 
     <Button
         android:id="@+id/info"
