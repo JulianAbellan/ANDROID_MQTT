@@ -24,6 +24,7 @@ class LanguageGame : AppCompatActivity() {
     lateinit var texttospeech: TextToSpeech
     lateinit var settings : SharedPreferences
 
+    var mqttCliente : MQTTCliente = MQTTCliente()
     var inputText : String? = null
     val RECOGNISE_SPEECH_ACTIVITY = 102
     var i : Int = 0
@@ -64,17 +65,24 @@ class LanguageGame : AppCompatActivity() {
         }
 
         aplicardalt()
+        establecerConexion()
         generarFrases()
         rutina()
 
+    }
+
+    fun establecerConexion(){
+        mqttCliente.connect(applicationContext)
     }
 
     fun validar(){
 
         if (!inputText.equals(fraseActual, ignoreCase = true)){
             grabarText.setText("${getString(R.string.tryagain)}")
+            mqttCliente.publish("juego/idioma", "FALLO. Se esperaba $fraseActual")
         } else {
             grabarText.setText("${getString(R.string.correct)}")
+            mqttCliente.publish("juego/idioma", "CORRECTO. Esperando siguiente respuesta...")
             i+=1
 
             if (i >= 5) {
@@ -132,6 +140,7 @@ class LanguageGame : AppCompatActivity() {
         if (requestCode == RECOGNISE_SPEECH_ACTIVITY && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             inputText = result?.get(0).toString()
+            mqttCliente.publish("juego/idioma", "Mensaje: $inputText")
             validar()
         }
     }
